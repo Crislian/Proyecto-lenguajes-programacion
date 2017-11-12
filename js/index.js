@@ -1,22 +1,21 @@
-require("js/sketch.js");
 // Editor init
 var javaEditor = CodeMirror(document.getElementById("input"), {
   lineNumbers: true,
   matchBrackets: true,
   mode: "text/x-java"
 });
-console.log(javaEditor)
 
 // Code change evaluation
-javaEditor.on("change", function(cm) {
+javaEditor.on("change", function() {
   for (l of lines) {
-    var gutter = document.getElementsByClassName("CodeMirror-code")[0].children[l].firstChild.firstChild;
+    var gutter = $(".CodeMirror-code:first")[0].children[l].firstChild.firstChild;
     gutter.className = "CodeMirror-linenumber CodeMirror-gutter-elt";
   }
   lines = [];
   console.clear();
+  code = javaEditor.getValue();
   setTimeout(() => {
-    visit(cm.getValue());
+    visit(code);
   }, 1);
 });
 
@@ -44,10 +43,10 @@ console.error = function(e) {
 
 // ANTLR4 var init and visit
 var tree;
-var antlr4 = require('antlr4/index');
-var TodoLexer = require('generated-parser/TodoLexer');
-var TodoParser = require('generated-parser/TodoParser');
-var Visitor = require('js/Visitor');
+const antlr4 = require('antlr4/index');
+const TodoLexer = require('generated-parser/TodoLexer');
+const TodoParser = require('generated-parser/TodoParser');
+const Visitor = require('js/Visitor');
 
 function visit(code) {
   var input = code;
@@ -55,7 +54,7 @@ function visit(code) {
   var lexer = new TodoLexer.TodoLexer(chars);
   var tokens = new antlr4.CommonTokenStream(lexer);
   var parser = new TodoParser.TodoParser(tokens);
-  var visitor = new Visitor.Visitor();
+  var visitor = new Visitor();
   parser.buildParseTrees = true;
   tree = parser.elements();
   visitor.visitElements(tree);
