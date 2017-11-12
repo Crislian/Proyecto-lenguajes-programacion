@@ -8,24 +8,29 @@ var code, structs;
 function setup() {
   var canvas = createCanvas(windowWidth * 2 / 3, windowHeight);
   canvas.parent('#canvas');
-  code = javaEditor.getValue();
+  colorMode(HSB);
+
+  code = editor.getValue();
+
   structs = new Map();
   structs.set("varList", new LinkedList());
-  structs.get("varList").append("hola");
-  structs.get("varList").append("papu");
+  structs.get("varList").add("hola");
+  structs.get("varList").add("papu");
 
   structs.set("holaList", new LinkedList());
-  structs.get("holaList").append("chao");
-  structs.get("holaList").append("papu");
+  structs.get("holaList").add("chao");
+  structs.get("holaList").add("papu");
 }
 
 function draw() {
-  background(255);
+  background(50, 25, 100);
   var i = 0;
   for (var [key, struct] of structs) {
-    i++;
-    // console.log(key + ' : ' + struct.elements);
-    struct.draw(i);
+    struct.draw(i++);
   }
   DrawTool.drawEllipse(code, mouseX, mouseY);
+}
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
 }

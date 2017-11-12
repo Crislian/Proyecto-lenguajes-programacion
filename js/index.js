@@ -1,19 +1,28 @@
-// Editor init
-var javaEditor = CodeMirror(document.getElementById("input"), {
-  lineNumbers: true,
-  matchBrackets: true,
-  mode: "text/x-java"
-});
+var $ = require("lib/jquery.min.js");
+var CodeMirror = require("lib/codemirror");
+require("lib/codemirror/clike");
+var mode = "Java";
+
+var editor;
+initEditor();
+
+function initEditor() {
+  editor = CodeMirror(document.getElementById("input"), {
+    lineNumbers: true,
+    matchBrackets: true,
+    mode: "text/x-" + mode.toLowerCase()
+  });
+}
 
 // Code change evaluation
-javaEditor.on("change", function() {
+editor.on("change", function() {
   for (l of lines) {
     var gutter = $(".CodeMirror-code:first")[0].children[l].firstChild.firstChild;
     gutter.className = "CodeMirror-linenumber CodeMirror-gutter-elt";
   }
   lines = [];
   console.clear();
-  code = javaEditor.getValue();
+  code = editor.getValue();
   setTimeout(() => {
     visit(code);
   }, 1);
@@ -44,18 +53,27 @@ console.error = function(e) {
 // ANTLR4 var init and visit
 var tree;
 const antlr4 = require('antlr4/index');
-const TodoLexer = require('generated-parser/TodoLexer');
-const TodoParser = require('generated-parser/TodoParser');
-const Visitor = require('js/Visitor');
+var Lexer, Parser, Visitor;
+setMode(mode);
+
+function setMode(m) {
+  Lexer = require(("generated-parser/" + m + "Lexer"));
+  Parser = require(("generated-parser/" + m + "Parser"));
+  Visitor = require(("js/Visitors/" + m + "Visitor")).Visitor;
+}
 
 function visit(code) {
   var input = code;
   var chars = new antlr4.InputStream(input);
-  var lexer = new TodoLexer.TodoLexer(chars);
+  var lexer = new Lexer[mode + "Lexer"](chars);
   var tokens = new antlr4.CommonTokenStream(lexer);
-  var parser = new TodoParser.TodoParser(tokens);
+  var parser = new Parser[mode + "Parser"](tokens);
   var visitor = new Visitor();
   parser.buildParseTrees = true;
-  tree = parser.elements();
-  visitor.visitElements(tree);
+  tree = parser.methodDeclaration();
+  try {
+    visitor.visitMethodDeclaration(tree);
+  } catch (e) {
+    err(e);
+  }
 }

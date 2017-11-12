@@ -1,0 +1,2148 @@
+// Generated from Java.g4 by ANTLR 4.5.3
+// jshint ignore: start
+var antlr4 = require('antlr4/index');
+
+// This class defines a complete listener for a parse tree produced by JavaParser.
+function JavaListener() {
+	antlr4.tree.ParseTreeListener.call(this);
+	return this;
+}
+
+JavaListener.prototype = Object.create(antlr4.tree.ParseTreeListener.prototype);
+JavaListener.prototype.constructor = JavaListener;
+
+// Enter a parse tree produced by JavaParser#literal.
+JavaListener.prototype.enterLiteral = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#literal.
+JavaListener.prototype.exitLiteral = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#type.
+JavaListener.prototype.enterType = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#type.
+JavaListener.prototype.exitType = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#primitiveType.
+JavaListener.prototype.enterPrimitiveType = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#primitiveType.
+JavaListener.prototype.exitPrimitiveType = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#numericType.
+JavaListener.prototype.enterNumericType = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#numericType.
+JavaListener.prototype.exitNumericType = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#integralType.
+JavaListener.prototype.enterIntegralType = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#integralType.
+JavaListener.prototype.exitIntegralType = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#floatingPointType.
+JavaListener.prototype.enterFloatingPointType = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#floatingPointType.
+JavaListener.prototype.exitFloatingPointType = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#referenceType.
+JavaListener.prototype.enterReferenceType = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#referenceType.
+JavaListener.prototype.exitReferenceType = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#classOrInterfaceType.
+JavaListener.prototype.enterClassOrInterfaceType = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#classOrInterfaceType.
+JavaListener.prototype.exitClassOrInterfaceType = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#classType.
+JavaListener.prototype.enterClassType = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#classType.
+JavaListener.prototype.exitClassType = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#classType_lf_classOrInterfaceType.
+JavaListener.prototype.enterClassType_lf_classOrInterfaceType = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#classType_lf_classOrInterfaceType.
+JavaListener.prototype.exitClassType_lf_classOrInterfaceType = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#classType_lfno_classOrInterfaceType.
+JavaListener.prototype.enterClassType_lfno_classOrInterfaceType = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#classType_lfno_classOrInterfaceType.
+JavaListener.prototype.exitClassType_lfno_classOrInterfaceType = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#interfaceType.
+JavaListener.prototype.enterInterfaceType = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#interfaceType.
+JavaListener.prototype.exitInterfaceType = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#interfaceType_lf_classOrInterfaceType.
+JavaListener.prototype.enterInterfaceType_lf_classOrInterfaceType = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#interfaceType_lf_classOrInterfaceType.
+JavaListener.prototype.exitInterfaceType_lf_classOrInterfaceType = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#interfaceType_lfno_classOrInterfaceType.
+JavaListener.prototype.enterInterfaceType_lfno_classOrInterfaceType = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#interfaceType_lfno_classOrInterfaceType.
+JavaListener.prototype.exitInterfaceType_lfno_classOrInterfaceType = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#typeVariable.
+JavaListener.prototype.enterTypeVariable = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#typeVariable.
+JavaListener.prototype.exitTypeVariable = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#arrayType.
+JavaListener.prototype.enterArrayType = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#arrayType.
+JavaListener.prototype.exitArrayType = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#dims.
+JavaListener.prototype.enterDims = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#dims.
+JavaListener.prototype.exitDims = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#typeParameter.
+JavaListener.prototype.enterTypeParameter = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#typeParameter.
+JavaListener.prototype.exitTypeParameter = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#typeParameterModifier.
+JavaListener.prototype.enterTypeParameterModifier = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#typeParameterModifier.
+JavaListener.prototype.exitTypeParameterModifier = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#typeBound.
+JavaListener.prototype.enterTypeBound = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#typeBound.
+JavaListener.prototype.exitTypeBound = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#additionalBound.
+JavaListener.prototype.enterAdditionalBound = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#additionalBound.
+JavaListener.prototype.exitAdditionalBound = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#typeArguments.
+JavaListener.prototype.enterTypeArguments = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#typeArguments.
+JavaListener.prototype.exitTypeArguments = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#typeArgumentList.
+JavaListener.prototype.enterTypeArgumentList = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#typeArgumentList.
+JavaListener.prototype.exitTypeArgumentList = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#typeArgument.
+JavaListener.prototype.enterTypeArgument = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#typeArgument.
+JavaListener.prototype.exitTypeArgument = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#wildcard.
+JavaListener.prototype.enterWildcard = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#wildcard.
+JavaListener.prototype.exitWildcard = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#wildcardBounds.
+JavaListener.prototype.enterWildcardBounds = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#wildcardBounds.
+JavaListener.prototype.exitWildcardBounds = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#packageName.
+JavaListener.prototype.enterPackageName = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#packageName.
+JavaListener.prototype.exitPackageName = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#typeName.
+JavaListener.prototype.enterTypeName = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#typeName.
+JavaListener.prototype.exitTypeName = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#packageOrTypeName.
+JavaListener.prototype.enterPackageOrTypeName = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#packageOrTypeName.
+JavaListener.prototype.exitPackageOrTypeName = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#expressionName.
+JavaListener.prototype.enterExpressionName = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#expressionName.
+JavaListener.prototype.exitExpressionName = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#methodName.
+JavaListener.prototype.enterMethodName = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#methodName.
+JavaListener.prototype.exitMethodName = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#ambiguousName.
+JavaListener.prototype.enterAmbiguousName = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#ambiguousName.
+JavaListener.prototype.exitAmbiguousName = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#compilationUnit.
+JavaListener.prototype.enterCompilationUnit = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#compilationUnit.
+JavaListener.prototype.exitCompilationUnit = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#packageDeclaration.
+JavaListener.prototype.enterPackageDeclaration = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#packageDeclaration.
+JavaListener.prototype.exitPackageDeclaration = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#packageModifier.
+JavaListener.prototype.enterPackageModifier = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#packageModifier.
+JavaListener.prototype.exitPackageModifier = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#importDeclaration.
+JavaListener.prototype.enterImportDeclaration = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#importDeclaration.
+JavaListener.prototype.exitImportDeclaration = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#singleTypeImportDeclaration.
+JavaListener.prototype.enterSingleTypeImportDeclaration = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#singleTypeImportDeclaration.
+JavaListener.prototype.exitSingleTypeImportDeclaration = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#typeImportOnDemandDeclaration.
+JavaListener.prototype.enterTypeImportOnDemandDeclaration = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#typeImportOnDemandDeclaration.
+JavaListener.prototype.exitTypeImportOnDemandDeclaration = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#singleStaticImportDeclaration.
+JavaListener.prototype.enterSingleStaticImportDeclaration = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#singleStaticImportDeclaration.
+JavaListener.prototype.exitSingleStaticImportDeclaration = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#staticImportOnDemandDeclaration.
+JavaListener.prototype.enterStaticImportOnDemandDeclaration = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#staticImportOnDemandDeclaration.
+JavaListener.prototype.exitStaticImportOnDemandDeclaration = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#typeDeclaration.
+JavaListener.prototype.enterTypeDeclaration = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#typeDeclaration.
+JavaListener.prototype.exitTypeDeclaration = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#classDeclaration.
+JavaListener.prototype.enterClassDeclaration = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#classDeclaration.
+JavaListener.prototype.exitClassDeclaration = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#normalClassDeclaration.
+JavaListener.prototype.enterNormalClassDeclaration = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#normalClassDeclaration.
+JavaListener.prototype.exitNormalClassDeclaration = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#classModifier.
+JavaListener.prototype.enterClassModifier = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#classModifier.
+JavaListener.prototype.exitClassModifier = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#typeParameters.
+JavaListener.prototype.enterTypeParameters = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#typeParameters.
+JavaListener.prototype.exitTypeParameters = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#typeParameterList.
+JavaListener.prototype.enterTypeParameterList = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#typeParameterList.
+JavaListener.prototype.exitTypeParameterList = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#superclass.
+JavaListener.prototype.enterSuperclass = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#superclass.
+JavaListener.prototype.exitSuperclass = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#superinterfaces.
+JavaListener.prototype.enterSuperinterfaces = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#superinterfaces.
+JavaListener.prototype.exitSuperinterfaces = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#interfaceTypeList.
+JavaListener.prototype.enterInterfaceTypeList = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#interfaceTypeList.
+JavaListener.prototype.exitInterfaceTypeList = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#classBody.
+JavaListener.prototype.enterClassBody = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#classBody.
+JavaListener.prototype.exitClassBody = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#classBodyDeclaration.
+JavaListener.prototype.enterClassBodyDeclaration = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#classBodyDeclaration.
+JavaListener.prototype.exitClassBodyDeclaration = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#classMemberDeclaration.
+JavaListener.prototype.enterClassMemberDeclaration = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#classMemberDeclaration.
+JavaListener.prototype.exitClassMemberDeclaration = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#fieldDeclaration.
+JavaListener.prototype.enterFieldDeclaration = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#fieldDeclaration.
+JavaListener.prototype.exitFieldDeclaration = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#fieldModifier.
+JavaListener.prototype.enterFieldModifier = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#fieldModifier.
+JavaListener.prototype.exitFieldModifier = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#variableDeclaratorList.
+JavaListener.prototype.enterVariableDeclaratorList = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#variableDeclaratorList.
+JavaListener.prototype.exitVariableDeclaratorList = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#variableDeclarator.
+JavaListener.prototype.enterVariableDeclarator = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#variableDeclarator.
+JavaListener.prototype.exitVariableDeclarator = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#variableDeclaratorId.
+JavaListener.prototype.enterVariableDeclaratorId = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#variableDeclaratorId.
+JavaListener.prototype.exitVariableDeclaratorId = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#variableInitializer.
+JavaListener.prototype.enterVariableInitializer = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#variableInitializer.
+JavaListener.prototype.exitVariableInitializer = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#unannType.
+JavaListener.prototype.enterUnannType = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#unannType.
+JavaListener.prototype.exitUnannType = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#unannPrimitiveType.
+JavaListener.prototype.enterUnannPrimitiveType = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#unannPrimitiveType.
+JavaListener.prototype.exitUnannPrimitiveType = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#unannReferenceType.
+JavaListener.prototype.enterUnannReferenceType = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#unannReferenceType.
+JavaListener.prototype.exitUnannReferenceType = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#unannClassOrInterfaceType.
+JavaListener.prototype.enterUnannClassOrInterfaceType = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#unannClassOrInterfaceType.
+JavaListener.prototype.exitUnannClassOrInterfaceType = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#unannClassType.
+JavaListener.prototype.enterUnannClassType = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#unannClassType.
+JavaListener.prototype.exitUnannClassType = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#unannClassType_lf_unannClassOrInterfaceType.
+JavaListener.prototype.enterUnannClassType_lf_unannClassOrInterfaceType = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#unannClassType_lf_unannClassOrInterfaceType.
+JavaListener.prototype.exitUnannClassType_lf_unannClassOrInterfaceType = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#unannClassType_lfno_unannClassOrInterfaceType.
+JavaListener.prototype.enterUnannClassType_lfno_unannClassOrInterfaceType = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#unannClassType_lfno_unannClassOrInterfaceType.
+JavaListener.prototype.exitUnannClassType_lfno_unannClassOrInterfaceType = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#unannInterfaceType.
+JavaListener.prototype.enterUnannInterfaceType = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#unannInterfaceType.
+JavaListener.prototype.exitUnannInterfaceType = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#unannInterfaceType_lf_unannClassOrInterfaceType.
+JavaListener.prototype.enterUnannInterfaceType_lf_unannClassOrInterfaceType = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#unannInterfaceType_lf_unannClassOrInterfaceType.
+JavaListener.prototype.exitUnannInterfaceType_lf_unannClassOrInterfaceType = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#unannInterfaceType_lfno_unannClassOrInterfaceType.
+JavaListener.prototype.enterUnannInterfaceType_lfno_unannClassOrInterfaceType = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#unannInterfaceType_lfno_unannClassOrInterfaceType.
+JavaListener.prototype.exitUnannInterfaceType_lfno_unannClassOrInterfaceType = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#unannTypeVariable.
+JavaListener.prototype.enterUnannTypeVariable = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#unannTypeVariable.
+JavaListener.prototype.exitUnannTypeVariable = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#unannArrayType.
+JavaListener.prototype.enterUnannArrayType = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#unannArrayType.
+JavaListener.prototype.exitUnannArrayType = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#methodDeclaration.
+JavaListener.prototype.enterMethodDeclaration = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#methodDeclaration.
+JavaListener.prototype.exitMethodDeclaration = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#methodModifier.
+JavaListener.prototype.enterMethodModifier = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#methodModifier.
+JavaListener.prototype.exitMethodModifier = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#methodHeader.
+JavaListener.prototype.enterMethodHeader = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#methodHeader.
+JavaListener.prototype.exitMethodHeader = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#result.
+JavaListener.prototype.enterResult = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#result.
+JavaListener.prototype.exitResult = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#methodDeclarator.
+JavaListener.prototype.enterMethodDeclarator = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#methodDeclarator.
+JavaListener.prototype.exitMethodDeclarator = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#formalParameterList.
+JavaListener.prototype.enterFormalParameterList = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#formalParameterList.
+JavaListener.prototype.exitFormalParameterList = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#formalParameters.
+JavaListener.prototype.enterFormalParameters = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#formalParameters.
+JavaListener.prototype.exitFormalParameters = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#formalParameter.
+JavaListener.prototype.enterFormalParameter = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#formalParameter.
+JavaListener.prototype.exitFormalParameter = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#variableModifier.
+JavaListener.prototype.enterVariableModifier = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#variableModifier.
+JavaListener.prototype.exitVariableModifier = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#lastFormalParameter.
+JavaListener.prototype.enterLastFormalParameter = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#lastFormalParameter.
+JavaListener.prototype.exitLastFormalParameter = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#receiverParameter.
+JavaListener.prototype.enterReceiverParameter = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#receiverParameter.
+JavaListener.prototype.exitReceiverParameter = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#throws_.
+JavaListener.prototype.enterThrows_ = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#throws_.
+JavaListener.prototype.exitThrows_ = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#exceptionTypeList.
+JavaListener.prototype.enterExceptionTypeList = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#exceptionTypeList.
+JavaListener.prototype.exitExceptionTypeList = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#exceptionType.
+JavaListener.prototype.enterExceptionType = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#exceptionType.
+JavaListener.prototype.exitExceptionType = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#methodBody.
+JavaListener.prototype.enterMethodBody = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#methodBody.
+JavaListener.prototype.exitMethodBody = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#instanceInitializer.
+JavaListener.prototype.enterInstanceInitializer = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#instanceInitializer.
+JavaListener.prototype.exitInstanceInitializer = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#staticInitializer.
+JavaListener.prototype.enterStaticInitializer = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#staticInitializer.
+JavaListener.prototype.exitStaticInitializer = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#constructorDeclaration.
+JavaListener.prototype.enterConstructorDeclaration = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#constructorDeclaration.
+JavaListener.prototype.exitConstructorDeclaration = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#constructorModifier.
+JavaListener.prototype.enterConstructorModifier = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#constructorModifier.
+JavaListener.prototype.exitConstructorModifier = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#constructorDeclarator.
+JavaListener.prototype.enterConstructorDeclarator = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#constructorDeclarator.
+JavaListener.prototype.exitConstructorDeclarator = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#simpleTypeName.
+JavaListener.prototype.enterSimpleTypeName = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#simpleTypeName.
+JavaListener.prototype.exitSimpleTypeName = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#constructorBody.
+JavaListener.prototype.enterConstructorBody = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#constructorBody.
+JavaListener.prototype.exitConstructorBody = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#explicitConstructorInvocation.
+JavaListener.prototype.enterExplicitConstructorInvocation = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#explicitConstructorInvocation.
+JavaListener.prototype.exitExplicitConstructorInvocation = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#enumDeclaration.
+JavaListener.prototype.enterEnumDeclaration = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#enumDeclaration.
+JavaListener.prototype.exitEnumDeclaration = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#enumBody.
+JavaListener.prototype.enterEnumBody = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#enumBody.
+JavaListener.prototype.exitEnumBody = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#enumConstantList.
+JavaListener.prototype.enterEnumConstantList = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#enumConstantList.
+JavaListener.prototype.exitEnumConstantList = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#enumConstant.
+JavaListener.prototype.enterEnumConstant = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#enumConstant.
+JavaListener.prototype.exitEnumConstant = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#enumConstantModifier.
+JavaListener.prototype.enterEnumConstantModifier = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#enumConstantModifier.
+JavaListener.prototype.exitEnumConstantModifier = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#enumBodyDeclarations.
+JavaListener.prototype.enterEnumBodyDeclarations = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#enumBodyDeclarations.
+JavaListener.prototype.exitEnumBodyDeclarations = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#interfaceDeclaration.
+JavaListener.prototype.enterInterfaceDeclaration = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#interfaceDeclaration.
+JavaListener.prototype.exitInterfaceDeclaration = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#normalInterfaceDeclaration.
+JavaListener.prototype.enterNormalInterfaceDeclaration = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#normalInterfaceDeclaration.
+JavaListener.prototype.exitNormalInterfaceDeclaration = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#interfaceModifier.
+JavaListener.prototype.enterInterfaceModifier = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#interfaceModifier.
+JavaListener.prototype.exitInterfaceModifier = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#extendsInterfaces.
+JavaListener.prototype.enterExtendsInterfaces = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#extendsInterfaces.
+JavaListener.prototype.exitExtendsInterfaces = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#interfaceBody.
+JavaListener.prototype.enterInterfaceBody = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#interfaceBody.
+JavaListener.prototype.exitInterfaceBody = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#interfaceMemberDeclaration.
+JavaListener.prototype.enterInterfaceMemberDeclaration = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#interfaceMemberDeclaration.
+JavaListener.prototype.exitInterfaceMemberDeclaration = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#constantDeclaration.
+JavaListener.prototype.enterConstantDeclaration = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#constantDeclaration.
+JavaListener.prototype.exitConstantDeclaration = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#constantModifier.
+JavaListener.prototype.enterConstantModifier = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#constantModifier.
+JavaListener.prototype.exitConstantModifier = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#interfaceMethodDeclaration.
+JavaListener.prototype.enterInterfaceMethodDeclaration = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#interfaceMethodDeclaration.
+JavaListener.prototype.exitInterfaceMethodDeclaration = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#interfaceMethodModifier.
+JavaListener.prototype.enterInterfaceMethodModifier = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#interfaceMethodModifier.
+JavaListener.prototype.exitInterfaceMethodModifier = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#annotationTypeDeclaration.
+JavaListener.prototype.enterAnnotationTypeDeclaration = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#annotationTypeDeclaration.
+JavaListener.prototype.exitAnnotationTypeDeclaration = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#annotationTypeBody.
+JavaListener.prototype.enterAnnotationTypeBody = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#annotationTypeBody.
+JavaListener.prototype.exitAnnotationTypeBody = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#annotationTypeMemberDeclaration.
+JavaListener.prototype.enterAnnotationTypeMemberDeclaration = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#annotationTypeMemberDeclaration.
+JavaListener.prototype.exitAnnotationTypeMemberDeclaration = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#annotationTypeElementDeclaration.
+JavaListener.prototype.enterAnnotationTypeElementDeclaration = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#annotationTypeElementDeclaration.
+JavaListener.prototype.exitAnnotationTypeElementDeclaration = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#annotationTypeElementModifier.
+JavaListener.prototype.enterAnnotationTypeElementModifier = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#annotationTypeElementModifier.
+JavaListener.prototype.exitAnnotationTypeElementModifier = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#defaultValue.
+JavaListener.prototype.enterDefaultValue = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#defaultValue.
+JavaListener.prototype.exitDefaultValue = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#annotation.
+JavaListener.prototype.enterAnnotation = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#annotation.
+JavaListener.prototype.exitAnnotation = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#normalAnnotation.
+JavaListener.prototype.enterNormalAnnotation = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#normalAnnotation.
+JavaListener.prototype.exitNormalAnnotation = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#elementValuePairList.
+JavaListener.prototype.enterElementValuePairList = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#elementValuePairList.
+JavaListener.prototype.exitElementValuePairList = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#elementValuePair.
+JavaListener.prototype.enterElementValuePair = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#elementValuePair.
+JavaListener.prototype.exitElementValuePair = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#elementValue.
+JavaListener.prototype.enterElementValue = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#elementValue.
+JavaListener.prototype.exitElementValue = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#elementValueArrayInitializer.
+JavaListener.prototype.enterElementValueArrayInitializer = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#elementValueArrayInitializer.
+JavaListener.prototype.exitElementValueArrayInitializer = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#elementValueList.
+JavaListener.prototype.enterElementValueList = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#elementValueList.
+JavaListener.prototype.exitElementValueList = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#markerAnnotation.
+JavaListener.prototype.enterMarkerAnnotation = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#markerAnnotation.
+JavaListener.prototype.exitMarkerAnnotation = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#singleElementAnnotation.
+JavaListener.prototype.enterSingleElementAnnotation = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#singleElementAnnotation.
+JavaListener.prototype.exitSingleElementAnnotation = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#arrayInitializer.
+JavaListener.prototype.enterArrayInitializer = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#arrayInitializer.
+JavaListener.prototype.exitArrayInitializer = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#variableInitializerList.
+JavaListener.prototype.enterVariableInitializerList = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#variableInitializerList.
+JavaListener.prototype.exitVariableInitializerList = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#block.
+JavaListener.prototype.enterBlock = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#block.
+JavaListener.prototype.exitBlock = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#blockStatements.
+JavaListener.prototype.enterBlockStatements = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#blockStatements.
+JavaListener.prototype.exitBlockStatements = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#blockStatement.
+JavaListener.prototype.enterBlockStatement = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#blockStatement.
+JavaListener.prototype.exitBlockStatement = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#localVariableDeclarationStatement.
+JavaListener.prototype.enterLocalVariableDeclarationStatement = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#localVariableDeclarationStatement.
+JavaListener.prototype.exitLocalVariableDeclarationStatement = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#localVariableDeclaration.
+JavaListener.prototype.enterLocalVariableDeclaration = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#localVariableDeclaration.
+JavaListener.prototype.exitLocalVariableDeclaration = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#statement.
+JavaListener.prototype.enterStatement = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#statement.
+JavaListener.prototype.exitStatement = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#statementNoShortIf.
+JavaListener.prototype.enterStatementNoShortIf = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#statementNoShortIf.
+JavaListener.prototype.exitStatementNoShortIf = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#statementWithoutTrailingSubstatement.
+JavaListener.prototype.enterStatementWithoutTrailingSubstatement = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#statementWithoutTrailingSubstatement.
+JavaListener.prototype.exitStatementWithoutTrailingSubstatement = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#emptyStatement.
+JavaListener.prototype.enterEmptyStatement = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#emptyStatement.
+JavaListener.prototype.exitEmptyStatement = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#labeledStatement.
+JavaListener.prototype.enterLabeledStatement = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#labeledStatement.
+JavaListener.prototype.exitLabeledStatement = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#labeledStatementNoShortIf.
+JavaListener.prototype.enterLabeledStatementNoShortIf = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#labeledStatementNoShortIf.
+JavaListener.prototype.exitLabeledStatementNoShortIf = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#expressionStatement.
+JavaListener.prototype.enterExpressionStatement = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#expressionStatement.
+JavaListener.prototype.exitExpressionStatement = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#statementExpression.
+JavaListener.prototype.enterStatementExpression = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#statementExpression.
+JavaListener.prototype.exitStatementExpression = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#ifThenStatement.
+JavaListener.prototype.enterIfThenStatement = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#ifThenStatement.
+JavaListener.prototype.exitIfThenStatement = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#ifThenElseStatement.
+JavaListener.prototype.enterIfThenElseStatement = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#ifThenElseStatement.
+JavaListener.prototype.exitIfThenElseStatement = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#ifThenElseStatementNoShortIf.
+JavaListener.prototype.enterIfThenElseStatementNoShortIf = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#ifThenElseStatementNoShortIf.
+JavaListener.prototype.exitIfThenElseStatementNoShortIf = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#assertStatement.
+JavaListener.prototype.enterAssertStatement = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#assertStatement.
+JavaListener.prototype.exitAssertStatement = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#switchStatement.
+JavaListener.prototype.enterSwitchStatement = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#switchStatement.
+JavaListener.prototype.exitSwitchStatement = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#switchBlock.
+JavaListener.prototype.enterSwitchBlock = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#switchBlock.
+JavaListener.prototype.exitSwitchBlock = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#switchBlockStatementGroup.
+JavaListener.prototype.enterSwitchBlockStatementGroup = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#switchBlockStatementGroup.
+JavaListener.prototype.exitSwitchBlockStatementGroup = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#switchLabels.
+JavaListener.prototype.enterSwitchLabels = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#switchLabels.
+JavaListener.prototype.exitSwitchLabels = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#switchLabel.
+JavaListener.prototype.enterSwitchLabel = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#switchLabel.
+JavaListener.prototype.exitSwitchLabel = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#enumConstantName.
+JavaListener.prototype.enterEnumConstantName = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#enumConstantName.
+JavaListener.prototype.exitEnumConstantName = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#whileStatement.
+JavaListener.prototype.enterWhileStatement = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#whileStatement.
+JavaListener.prototype.exitWhileStatement = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#whileStatementNoShortIf.
+JavaListener.prototype.enterWhileStatementNoShortIf = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#whileStatementNoShortIf.
+JavaListener.prototype.exitWhileStatementNoShortIf = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#doStatement.
+JavaListener.prototype.enterDoStatement = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#doStatement.
+JavaListener.prototype.exitDoStatement = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#forStatement.
+JavaListener.prototype.enterForStatement = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#forStatement.
+JavaListener.prototype.exitForStatement = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#forStatementNoShortIf.
+JavaListener.prototype.enterForStatementNoShortIf = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#forStatementNoShortIf.
+JavaListener.prototype.exitForStatementNoShortIf = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#basicForStatement.
+JavaListener.prototype.enterBasicForStatement = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#basicForStatement.
+JavaListener.prototype.exitBasicForStatement = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#basicForStatementNoShortIf.
+JavaListener.prototype.enterBasicForStatementNoShortIf = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#basicForStatementNoShortIf.
+JavaListener.prototype.exitBasicForStatementNoShortIf = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#forInit.
+JavaListener.prototype.enterForInit = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#forInit.
+JavaListener.prototype.exitForInit = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#forUpdate.
+JavaListener.prototype.enterForUpdate = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#forUpdate.
+JavaListener.prototype.exitForUpdate = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#statementExpressionList.
+JavaListener.prototype.enterStatementExpressionList = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#statementExpressionList.
+JavaListener.prototype.exitStatementExpressionList = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#enhancedForStatement.
+JavaListener.prototype.enterEnhancedForStatement = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#enhancedForStatement.
+JavaListener.prototype.exitEnhancedForStatement = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#enhancedForStatementNoShortIf.
+JavaListener.prototype.enterEnhancedForStatementNoShortIf = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#enhancedForStatementNoShortIf.
+JavaListener.prototype.exitEnhancedForStatementNoShortIf = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#breakStatement.
+JavaListener.prototype.enterBreakStatement = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#breakStatement.
+JavaListener.prototype.exitBreakStatement = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#continueStatement.
+JavaListener.prototype.enterContinueStatement = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#continueStatement.
+JavaListener.prototype.exitContinueStatement = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#returnStatement.
+JavaListener.prototype.enterReturnStatement = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#returnStatement.
+JavaListener.prototype.exitReturnStatement = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#throwStatement.
+JavaListener.prototype.enterThrowStatement = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#throwStatement.
+JavaListener.prototype.exitThrowStatement = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#synchronizedStatement.
+JavaListener.prototype.enterSynchronizedStatement = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#synchronizedStatement.
+JavaListener.prototype.exitSynchronizedStatement = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#tryStatement.
+JavaListener.prototype.enterTryStatement = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#tryStatement.
+JavaListener.prototype.exitTryStatement = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#catches.
+JavaListener.prototype.enterCatches = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#catches.
+JavaListener.prototype.exitCatches = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#catchClause.
+JavaListener.prototype.enterCatchClause = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#catchClause.
+JavaListener.prototype.exitCatchClause = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#catchFormalParameter.
+JavaListener.prototype.enterCatchFormalParameter = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#catchFormalParameter.
+JavaListener.prototype.exitCatchFormalParameter = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#catchType.
+JavaListener.prototype.enterCatchType = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#catchType.
+JavaListener.prototype.exitCatchType = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#finally_.
+JavaListener.prototype.enterFinally_ = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#finally_.
+JavaListener.prototype.exitFinally_ = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#tryWithResourcesStatement.
+JavaListener.prototype.enterTryWithResourcesStatement = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#tryWithResourcesStatement.
+JavaListener.prototype.exitTryWithResourcesStatement = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#resourceSpecification.
+JavaListener.prototype.enterResourceSpecification = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#resourceSpecification.
+JavaListener.prototype.exitResourceSpecification = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#resourceList.
+JavaListener.prototype.enterResourceList = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#resourceList.
+JavaListener.prototype.exitResourceList = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#resource.
+JavaListener.prototype.enterResource = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#resource.
+JavaListener.prototype.exitResource = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#primary.
+JavaListener.prototype.enterPrimary = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#primary.
+JavaListener.prototype.exitPrimary = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#primaryNoNewArray.
+JavaListener.prototype.enterPrimaryNoNewArray = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#primaryNoNewArray.
+JavaListener.prototype.exitPrimaryNoNewArray = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#primaryNoNewArray_lf_arrayAccess.
+JavaListener.prototype.enterPrimaryNoNewArray_lf_arrayAccess = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#primaryNoNewArray_lf_arrayAccess.
+JavaListener.prototype.exitPrimaryNoNewArray_lf_arrayAccess = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#primaryNoNewArray_lfno_arrayAccess.
+JavaListener.prototype.enterPrimaryNoNewArray_lfno_arrayAccess = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#primaryNoNewArray_lfno_arrayAccess.
+JavaListener.prototype.exitPrimaryNoNewArray_lfno_arrayAccess = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#primaryNoNewArray_lf_primary.
+JavaListener.prototype.enterPrimaryNoNewArray_lf_primary = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#primaryNoNewArray_lf_primary.
+JavaListener.prototype.exitPrimaryNoNewArray_lf_primary = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#primaryNoNewArray_lf_primary_lf_arrayAccess_lf_primary.
+JavaListener.prototype.enterPrimaryNoNewArray_lf_primary_lf_arrayAccess_lf_primary = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#primaryNoNewArray_lf_primary_lf_arrayAccess_lf_primary.
+JavaListener.prototype.exitPrimaryNoNewArray_lf_primary_lf_arrayAccess_lf_primary = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#primaryNoNewArray_lf_primary_lfno_arrayAccess_lf_primary.
+JavaListener.prototype.enterPrimaryNoNewArray_lf_primary_lfno_arrayAccess_lf_primary = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#primaryNoNewArray_lf_primary_lfno_arrayAccess_lf_primary.
+JavaListener.prototype.exitPrimaryNoNewArray_lf_primary_lfno_arrayAccess_lf_primary = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#primaryNoNewArray_lfno_primary.
+JavaListener.prototype.enterPrimaryNoNewArray_lfno_primary = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#primaryNoNewArray_lfno_primary.
+JavaListener.prototype.exitPrimaryNoNewArray_lfno_primary = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#primaryNoNewArray_lfno_primary_lf_arrayAccess_lfno_primary.
+JavaListener.prototype.enterPrimaryNoNewArray_lfno_primary_lf_arrayAccess_lfno_primary = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#primaryNoNewArray_lfno_primary_lf_arrayAccess_lfno_primary.
+JavaListener.prototype.exitPrimaryNoNewArray_lfno_primary_lf_arrayAccess_lfno_primary = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#primaryNoNewArray_lfno_primary_lfno_arrayAccess_lfno_primary.
+JavaListener.prototype.enterPrimaryNoNewArray_lfno_primary_lfno_arrayAccess_lfno_primary = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#primaryNoNewArray_lfno_primary_lfno_arrayAccess_lfno_primary.
+JavaListener.prototype.exitPrimaryNoNewArray_lfno_primary_lfno_arrayAccess_lfno_primary = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#classInstanceCreationExpression.
+JavaListener.prototype.enterClassInstanceCreationExpression = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#classInstanceCreationExpression.
+JavaListener.prototype.exitClassInstanceCreationExpression = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#classInstanceCreationExpression_lf_primary.
+JavaListener.prototype.enterClassInstanceCreationExpression_lf_primary = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#classInstanceCreationExpression_lf_primary.
+JavaListener.prototype.exitClassInstanceCreationExpression_lf_primary = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#classInstanceCreationExpression_lfno_primary.
+JavaListener.prototype.enterClassInstanceCreationExpression_lfno_primary = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#classInstanceCreationExpression_lfno_primary.
+JavaListener.prototype.exitClassInstanceCreationExpression_lfno_primary = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#typeArgumentsOrDiamond.
+JavaListener.prototype.enterTypeArgumentsOrDiamond = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#typeArgumentsOrDiamond.
+JavaListener.prototype.exitTypeArgumentsOrDiamond = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#fieldAccess.
+JavaListener.prototype.enterFieldAccess = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#fieldAccess.
+JavaListener.prototype.exitFieldAccess = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#fieldAccess_lf_primary.
+JavaListener.prototype.enterFieldAccess_lf_primary = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#fieldAccess_lf_primary.
+JavaListener.prototype.exitFieldAccess_lf_primary = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#fieldAccess_lfno_primary.
+JavaListener.prototype.enterFieldAccess_lfno_primary = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#fieldAccess_lfno_primary.
+JavaListener.prototype.exitFieldAccess_lfno_primary = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#arrayAccess.
+JavaListener.prototype.enterArrayAccess = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#arrayAccess.
+JavaListener.prototype.exitArrayAccess = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#arrayAccess_lf_primary.
+JavaListener.prototype.enterArrayAccess_lf_primary = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#arrayAccess_lf_primary.
+JavaListener.prototype.exitArrayAccess_lf_primary = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#arrayAccess_lfno_primary.
+JavaListener.prototype.enterArrayAccess_lfno_primary = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#arrayAccess_lfno_primary.
+JavaListener.prototype.exitArrayAccess_lfno_primary = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#methodInvocation.
+JavaListener.prototype.enterMethodInvocation = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#methodInvocation.
+JavaListener.prototype.exitMethodInvocation = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#methodInvocation_lf_primary.
+JavaListener.prototype.enterMethodInvocation_lf_primary = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#methodInvocation_lf_primary.
+JavaListener.prototype.exitMethodInvocation_lf_primary = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#methodInvocation_lfno_primary.
+JavaListener.prototype.enterMethodInvocation_lfno_primary = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#methodInvocation_lfno_primary.
+JavaListener.prototype.exitMethodInvocation_lfno_primary = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#argumentList.
+JavaListener.prototype.enterArgumentList = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#argumentList.
+JavaListener.prototype.exitArgumentList = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#methodReference.
+JavaListener.prototype.enterMethodReference = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#methodReference.
+JavaListener.prototype.exitMethodReference = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#methodReference_lf_primary.
+JavaListener.prototype.enterMethodReference_lf_primary = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#methodReference_lf_primary.
+JavaListener.prototype.exitMethodReference_lf_primary = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#methodReference_lfno_primary.
+JavaListener.prototype.enterMethodReference_lfno_primary = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#methodReference_lfno_primary.
+JavaListener.prototype.exitMethodReference_lfno_primary = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#arrayCreationExpression.
+JavaListener.prototype.enterArrayCreationExpression = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#arrayCreationExpression.
+JavaListener.prototype.exitArrayCreationExpression = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#dimExprs.
+JavaListener.prototype.enterDimExprs = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#dimExprs.
+JavaListener.prototype.exitDimExprs = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#dimExpr.
+JavaListener.prototype.enterDimExpr = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#dimExpr.
+JavaListener.prototype.exitDimExpr = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#constantExpression.
+JavaListener.prototype.enterConstantExpression = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#constantExpression.
+JavaListener.prototype.exitConstantExpression = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#expression.
+JavaListener.prototype.enterExpression = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#expression.
+JavaListener.prototype.exitExpression = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#lambdaExpression.
+JavaListener.prototype.enterLambdaExpression = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#lambdaExpression.
+JavaListener.prototype.exitLambdaExpression = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#lambdaParameters.
+JavaListener.prototype.enterLambdaParameters = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#lambdaParameters.
+JavaListener.prototype.exitLambdaParameters = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#inferredFormalParameterList.
+JavaListener.prototype.enterInferredFormalParameterList = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#inferredFormalParameterList.
+JavaListener.prototype.exitInferredFormalParameterList = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#lambdaBody.
+JavaListener.prototype.enterLambdaBody = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#lambdaBody.
+JavaListener.prototype.exitLambdaBody = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#assignmentExpression.
+JavaListener.prototype.enterAssignmentExpression = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#assignmentExpression.
+JavaListener.prototype.exitAssignmentExpression = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#assignment.
+JavaListener.prototype.enterAssignment = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#assignment.
+JavaListener.prototype.exitAssignment = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#leftHandSide.
+JavaListener.prototype.enterLeftHandSide = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#leftHandSide.
+JavaListener.prototype.exitLeftHandSide = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#assignmentOperator.
+JavaListener.prototype.enterAssignmentOperator = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#assignmentOperator.
+JavaListener.prototype.exitAssignmentOperator = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#conditionalExpression.
+JavaListener.prototype.enterConditionalExpression = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#conditionalExpression.
+JavaListener.prototype.exitConditionalExpression = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#conditionalOrExpression.
+JavaListener.prototype.enterConditionalOrExpression = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#conditionalOrExpression.
+JavaListener.prototype.exitConditionalOrExpression = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#conditionalAndExpression.
+JavaListener.prototype.enterConditionalAndExpression = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#conditionalAndExpression.
+JavaListener.prototype.exitConditionalAndExpression = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#inclusiveOrExpression.
+JavaListener.prototype.enterInclusiveOrExpression = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#inclusiveOrExpression.
+JavaListener.prototype.exitInclusiveOrExpression = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#exclusiveOrExpression.
+JavaListener.prototype.enterExclusiveOrExpression = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#exclusiveOrExpression.
+JavaListener.prototype.exitExclusiveOrExpression = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#andExpression.
+JavaListener.prototype.enterAndExpression = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#andExpression.
+JavaListener.prototype.exitAndExpression = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#equalityExpression.
+JavaListener.prototype.enterEqualityExpression = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#equalityExpression.
+JavaListener.prototype.exitEqualityExpression = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#relationalExpression.
+JavaListener.prototype.enterRelationalExpression = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#relationalExpression.
+JavaListener.prototype.exitRelationalExpression = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#shiftExpression.
+JavaListener.prototype.enterShiftExpression = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#shiftExpression.
+JavaListener.prototype.exitShiftExpression = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#additiveExpression.
+JavaListener.prototype.enterAdditiveExpression = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#additiveExpression.
+JavaListener.prototype.exitAdditiveExpression = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#multiplicativeExpression.
+JavaListener.prototype.enterMultiplicativeExpression = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#multiplicativeExpression.
+JavaListener.prototype.exitMultiplicativeExpression = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#unaryExpression.
+JavaListener.prototype.enterUnaryExpression = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#unaryExpression.
+JavaListener.prototype.exitUnaryExpression = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#preIncrementExpression.
+JavaListener.prototype.enterPreIncrementExpression = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#preIncrementExpression.
+JavaListener.prototype.exitPreIncrementExpression = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#preDecrementExpression.
+JavaListener.prototype.enterPreDecrementExpression = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#preDecrementExpression.
+JavaListener.prototype.exitPreDecrementExpression = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#unaryExpressionNotPlusMinus.
+JavaListener.prototype.enterUnaryExpressionNotPlusMinus = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#unaryExpressionNotPlusMinus.
+JavaListener.prototype.exitUnaryExpressionNotPlusMinus = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#postfixExpression.
+JavaListener.prototype.enterPostfixExpression = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#postfixExpression.
+JavaListener.prototype.exitPostfixExpression = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#postIncrementExpression.
+JavaListener.prototype.enterPostIncrementExpression = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#postIncrementExpression.
+JavaListener.prototype.exitPostIncrementExpression = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#postIncrementExpression_lf_postfixExpression.
+JavaListener.prototype.enterPostIncrementExpression_lf_postfixExpression = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#postIncrementExpression_lf_postfixExpression.
+JavaListener.prototype.exitPostIncrementExpression_lf_postfixExpression = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#postDecrementExpression.
+JavaListener.prototype.enterPostDecrementExpression = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#postDecrementExpression.
+JavaListener.prototype.exitPostDecrementExpression = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#postDecrementExpression_lf_postfixExpression.
+JavaListener.prototype.enterPostDecrementExpression_lf_postfixExpression = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#postDecrementExpression_lf_postfixExpression.
+JavaListener.prototype.exitPostDecrementExpression_lf_postfixExpression = function(ctx) {
+};
+
+
+// Enter a parse tree produced by JavaParser#castExpression.
+JavaListener.prototype.enterCastExpression = function(ctx) {
+};
+
+// Exit a parse tree produced by JavaParser#castExpression.
+JavaListener.prototype.exitCastExpression = function(ctx) {
+};
+
+
+
+exports.JavaListener = JavaListener;
