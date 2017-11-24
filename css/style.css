@@ -1,13 +1,47 @@
-html,
-body {
-	margin: 0;
-	padding: 0;
+html, body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-#input {
-	height: 100%;
+.input {
+    height: 100%;
 }
 
 .gutter-error {
-  background-color: #ff8f8f
+    background-color: #ff8f8f;
+    position: relative;
+    display: inline-block;
+}
+
+/* Tooltip w3 */
+.gutter-error .gutter-error-tooltip {
+    visibility: hidden;
+    width: auto;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    left: 110%;
+}
+
+/* Tooltip arrow */
+.gutter-error .gutter-error-tooltip::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-top: -5px;
+    border: 5px solid transparent;
+    border-right-color: black;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.gutter-error:hover .gutter-error-tooltip {
+    visibility: visible;
+    opacity: 1;
 }
