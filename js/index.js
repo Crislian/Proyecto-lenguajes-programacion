@@ -6,11 +6,21 @@ var mode = "Java";
 var editor;
 initEditor();
 
+var initialCode = "public class Main{\n" +
+    " public static void main(String []args){\n" +
+    "  \t\n" +
+    " }\n" +
+    "}";
+
 function initEditor() {
     editor = CodeMirror(document.getElementById("input"), {
         lineNumbers: true,
         matchBrackets: true,
-        mode: "text/x-" + mode.toLowerCase()
+        styleActiveLine: true,
+        indentUnit:4,
+        mode: "text/x-" + mode.toLowerCase(),
+        value: "public class Main{\n\tpublic static void main(String[] args){\n\t\t\n\t}\t\n}",
+        smartIdent:true
     });
 }
 
@@ -25,7 +35,6 @@ editor.on("keyup", function () {
 });
 
 function doneTyping() {
-    flagError = false;
     for (l of lines) {
         var gutter = $(".CodeMirror-code:first")[0].children[l].firstChild.firstChild;
         gutter.className = "CodeMirror-linenumber CodeMirror-gutter-elt";
@@ -82,9 +91,9 @@ function visit(code) {
     var visitor = new Visitor();
 
     parser.buildParseTrees = true;
-    tree = parser.methodDeclaration();
+    tree = parser.compilationUnit();
     try {
-        visitor.visitMethodDeclaration(tree);
+        visitor.visitCompilationUnit(tree);
     } catch (e) {
         err(e);
     }

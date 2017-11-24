@@ -16,6 +16,7 @@ function setup() {
   structs.set("varList", new LinkedList());
   structs.get("varList").add("hola");
   structs.get("varList").add("papu");
+    structs.get("varList").add("asdas");
 
   structs.set("holaList", new LinkedList());
   structs.get("holaList").add("chao");
@@ -28,7 +29,7 @@ function draw() {
   for (var [key, struct] of structs) {
     struct.draw(i++);
   }
-  DrawTool.drawEllipse(code, mouseX, mouseY);
+  // DrawTool.drawEllipse(code, mouseX, mouseY);
 }
 
 function windowResized() {

@@ -26,8 +26,6 @@
 */
 grammar Java;
 
-//options { tokenVocab=JavaLexer; }
-
 compilationUnit
     : packageDeclaration? importDeclaration* typeDeclaration* EOF
     ;

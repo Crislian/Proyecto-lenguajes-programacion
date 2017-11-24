@@ -1,15 +1,238 @@
 const JavaVisitor = require('generated-parser/JavaVisitor').JavaVisitor;
+const Variable = require('js/Variable');
+const Type = require('js/Type');
+// const DataType = require('js/DataType');
+const Declarator = require('js/Declarator');
+const Value = require('js/Value');
+
+let tableOfVar = new Map();
 
 // This class defines a complete visitor for a parse tree produced by todoParser.
 class JVisitor extends JavaVisitor {
-  constructor() {
-    super();
-  }
+    constructor() {
+        super();
+    }
 
-  // Visit a parse tree produced by JavaParser#literal.
+    // Visit a parse tree produced by JavaParser#compilationUnit.
+    visitCompilationUnit(ctx) {
+        console.log("INICIO "  + ctx.getText());
+         return this.visitTypeDeclaration(ctx.typeDeclaration(0))
+    };
+
+    // Visit a parse tree produced by JavaParser#typeDeclaration.
+    visitTypeDeclaration(ctx) {
+        console.log("Type declaration");
+        return this.visitClassDeclaration(ctx.classDeclaration());
+    };
+
+    // Visit a parse tree produced by JavaParser#classDeclaration.
+    visitClassDeclaration(ctx) {
+        console.log("Clase " + ctx.getText());
+        return this.visitClassBody(ctx.classBody())
+    };
+
+    // Visit a parse tree produced by JavaParser#classBody.
+    visitClassBody(ctx) {
+        console.log("Cuerpo " + ctx.getText());
+        let index = 0;
+        while(ctx.classBodyDeclaration(index)){
+            this.visitClassBodyDeclaration(ctx.classBodyDeclaration(index))
+            index++;
+        }
+        return
+    };
+
+    // Visit a parse tree produced by JavaParser#classBodyDeclaration.
+    visitClassBodyDeclaration(ctx) {
+        console.log("Member declaration " + ctx.getText());
+        return this.visitMemberDeclaration(ctx.memberDeclaration());
+    };
+
+    visitMemberDeclaration(ctx){
+        console.log("Member " + ctx.getText());
+        return this.visitMethodDeclaration(ctx.methodDeclaration());
+    }
+
+    // Visit a parse tree produced by JavaParser#methodDeclaration.
+    visitMethodDeclaration(ctx) {
+        console.log("Method " + ctx.getText());
+        return this.visitMethodBody(ctx.methodBody());
+    };
+
+    // Visit a parse tree produced by JavaParser#methodBody.
+    visitMethodBody(ctx) {
+        console.log("Method Body " + ctx.getText());
+        if(ctx.block()){
+            return this.visitBlock(ctx.block());
+        }
+        return
+    };
+
+    // Visit a parse tree produced by JavaParser#block.
+    visitBlock(ctx) {
+        let index = 0;
+        while(ctx.blockStatement(index)){
+            this.visitBlockStatement(ctx.blockStatement(index))
+            index++;
+        }
+        return
+    };
+
+    // Visit a parse tree produced by JavaParser#blockStatement.
+    visitBlockStatement(ctx) {
+        if(ctx.localVariableDeclaration()){
+            return this.visitLocalVariableDeclaration(ctx.localVariableDeclaration());
+        } else if(ctx.statement()){
+            return this.visitStatement(ctx.statement());
+        } else if(ctx.localTypeDeclaration()){
+            return this.visitLocalTypeDeclaration(ctx.localTypeDeclaration())
+        }
+        return
+    };
+
+    // Visit a parse tree produced by JavaParser#localVariableDeclaration.
+    visitLocalVariableDeclaration(ctx) {
+        console.log("Var " + ctx.getText());
+        let isFinal = false;
+        if(ctx.variableModifier(0)){
+            isFinal = true;
+        }
+        let type = this.visitTypeType(ctx.typeType());
+        console.log(type);
+
+
+        let declarators = this.visitVariableDeclarators(ctx.variableDeclarators());
+        for(let val of declarators)
+            tableOfVar.set(val.name, new Variable(isFinal, val.name, val.value))
+        console.log(tableOfVar);
+        // return super.visitChildren(ctx)
+    };
+
+    visitTypeType(ctx){
+        console.log("TYPE " + ctx.getText());
+        let type = null;
+        if(ctx.primitiveType()){
+            type = new Type(true, ctx.primitiveType().getText(), null);
+        } else {
+            type = this.visitClassOrInterfaceType(ctx.classOrInterfaceType());
+        }
+        return type;
+    }
+
+    // Visit a parse tree produced by JavaParser#classOrInterfaceType.
+    visitClassOrInterfaceType(ctx) {
+        console.log("Class Type " + ctx.getText());
+        let topClass = ctx.IDENTIFIER(0).getText();
+        let subClass = -1;
+        if(ctx.typeArguments(0)){
+            subClass = this.visitTypeArguments(ctx.typeArguments(0));
+        }
+        return (new Type(false, topClass, subClass));
+    };
+
+    // Visit a parse tree produced by JavaParser#typeArguments.
+    visitTypeArguments(ctx) {
+        console.log("Args " + ctx.getText());
+        return this.visitTypeArgument(ctx.typeArgument(0));
+    };
+
+    // Visit a parse tree produced by JavaParser#typeArgument.
+    visitTypeArgument(ctx) {
+        if(ctx.typeType()){
+            return this.visitTypeType(ctx.typeType()).mainType;
+        } else {
+            return super.visitChildren(ctx);
+        }
+    };
+
+    visitVariableDeclarators(ctx){
+        let decs = Array();
+        let index = 0;
+        while(ctx.variableDeclarator(index)){
+            let dec = this.visitVariableDeclarator(ctx.variableDeclarator(index));
+            decs.push(dec);
+            index++;
+        }
+        return decs;
+    }
+
+    // Visit a parse tree produced by JavaParser#variableDeclarator.
+    visitVariableDeclarator(ctx) {
+        let name = this.visitVariableDeclaratorId(ctx.variableDeclaratorId());
+        // let val = this.visitVariableInitializer(ctx.variableInitializer());
+        let val = 0;
+        return (new Declarator(name, val));
+    };
+
+    // Visit a parse tree produced by JavaParser#variableDeclaratorId.
+    visitVariableDeclaratorId(ctx) {
+        return ctx.IDENTIFIER().getText();
+    };
+
+    visitLocalTypeDeclaration(ctx){
+        console.log("Type dec " + ctx.getText());
+        return super.visitChildren(ctx);
+    }
+
+    // Visit a parse tree produced by JavaParser#statement.
+    visitStatement(ctx) {
+        console.log("Statement " + ctx.getText());
+        if(ctx.IF()){
+            console.log(ctx.IF().getText());
+            // Go to the if function
+        } else if(ctx.FOR()){
+            console.log(ctx.FOR().getText());
+            // GO TO THE FUNCTION OF FOR
+        } else if(ctx.WHILE()){
+            console.log(ctx.WHILE().getText());
+            // GO TO THE FUNCTION OF WHILE
+        } else if(ctx.SWITCH()){
+            console.log(ctx.SWITCH().getText());
+            // GO TO THE FUNCTION OF SWITCH
+        } else if(ctx.DO()){
+            console.log(ctx.DO().getText());
+        } else if(ctx.BREAK()){
+            console.log(ctx.BREAK().getText());
+            // Do the action of BREAK
+        } else if(ctx.CONTINUE()) {
+            console.log(ctx.CONTINUE().getText())
+            // DO THE ACTION OF CONTINUE
+        } else if(ctx.statementExpression){
+            this.visitExpression(ctx.statementExpression);
+        }
+        return
+    };
+
+    // Visit a parse tree produced by JavaParser#expression.
+    visitExpression(ctx) {
+        console.log(ctx.getText());
+        return super.visitChildren(ctx)
+    };
+
+    // Visit a parse tree produced by JavaParser#statementExpression.
+    visitStatementExpression(ctx) {
+        console.log(ctx);
+        return super.visitChildren(ctx)
+    };
+
+
+    visitPackageDeclaration(ctx) {
+        console.log("package");
+        return super.visitChildren(ctx)
+    };
+
+    // Visit a parse tree produced by JavaParser#importDeclaration.
+    visitImportDeclaration(ctx) {
+        console.log("ASDSDAS");
+        return super.visitChildren(ctx)
+    };
+
+
+
+    // Visit a parse tree produced by JavaParser#literal.
   visitLiteral(ctx) {
     console.log(ctx.getText());
-    return super.visitChildren(ctx)
+    return
   };
 
 
@@ -53,14 +276,6 @@ class JVisitor extends JavaVisitor {
     console.log(ctx.getText());
     return super.visitChildren(ctx)
   };
-
-
-  // Visit a parse tree produced by JavaParser#classOrInterfaceType.
-  visitClassOrInterfaceType(ctx) {
-    console.log(ctx.getText());
-    return super.visitChildren(ctx)
-  };
-
 
   // Visit a parse tree produced by JavaParser#classType.
   visitClassType(ctx) {
@@ -153,13 +368,6 @@ class JVisitor extends JavaVisitor {
   };
 
 
-  // Visit a parse tree produced by JavaParser#typeArguments.
-  visitTypeArguments(ctx) {
-    console.log(ctx.getText());
-    return super.visitChildren(ctx)
-  };
-
-
   // Visit a parse tree produced by JavaParser#typeArgumentList.
   visitTypeArgumentList(ctx) {
     console.log(ctx.getText());
@@ -167,11 +375,6 @@ class JVisitor extends JavaVisitor {
   };
 
 
-  // Visit a parse tree produced by JavaParser#typeArgument.
-  visitTypeArgument(ctx) {
-    console.log(ctx.getText());
-    return super.visitChildren(ctx)
-  };
 
 
   // Visit a parse tree produced by JavaParser#wildcard.
@@ -230,29 +433,12 @@ class JVisitor extends JavaVisitor {
   };
 
 
-  // Visit a parse tree produced by JavaParser#compilationUnit.
-  visitCompilationUnit(ctx) {
-    console.log(ctx.getText());
-    return super.visitChildren(ctx)
-  };
-
 
   // Visit a parse tree produced by JavaParser#packageDeclaration.
-  visitPackageDeclaration(ctx) {
-    console.log(ctx.getText());
-    return super.visitChildren(ctx)
-  };
 
 
   // Visit a parse tree produced by JavaParser#packageModifier.
   visitPackageModifier(ctx) {
-    console.log(ctx.getText());
-    return super.visitChildren(ctx)
-  };
-
-
-  // Visit a parse tree produced by JavaParser#importDeclaration.
-  visitImportDeclaration(ctx) {
     console.log(ctx.getText());
     return super.visitChildren(ctx)
   };
@@ -281,20 +467,6 @@ class JVisitor extends JavaVisitor {
 
   // Visit a parse tree produced by JavaParser#staticImportOnDemandDeclaration.
   visitStaticImportOnDemandDeclaration(ctx) {
-    console.log(ctx.getText());
-    return super.visitChildren(ctx)
-  };
-
-
-  // Visit a parse tree produced by JavaParser#typeDeclaration.
-  visitTypeDeclaration(ctx) {
-    console.log(ctx.getText());
-    return super.visitChildren(ctx)
-  };
-
-
-  // Visit a parse tree produced by JavaParser#classDeclaration.
-  visitClassDeclaration(ctx) {
     console.log(ctx.getText());
     return super.visitChildren(ctx)
   };
@@ -348,21 +520,6 @@ class JVisitor extends JavaVisitor {
     return super.visitChildren(ctx)
   };
 
-
-  // Visit a parse tree produced by JavaParser#classBody.
-  visitClassBody(ctx) {
-    console.log(ctx.getText());
-    return super.visitChildren(ctx)
-  };
-
-
-  // Visit a parse tree produced by JavaParser#classBodyDeclaration.
-  visitClassBodyDeclaration(ctx) {
-    console.log(ctx.getText());
-    return super.visitChildren(ctx)
-  };
-
-
   // Visit a parse tree produced by JavaParser#classMemberDeclaration.
   visitClassMemberDeclaration(ctx) {
     console.log(ctx.getText());
@@ -389,21 +546,6 @@ class JVisitor extends JavaVisitor {
     console.log(ctx.getText());
     return super.visitChildren(ctx)
   };
-
-
-  // Visit a parse tree produced by JavaParser#variableDeclarator.
-  visitVariableDeclarator(ctx) {
-    console.log(ctx.getText());
-    return super.visitChildren(ctx)
-  };
-
-
-  // Visit a parse tree produced by JavaParser#variableDeclaratorId.
-  visitVariableDeclaratorId(ctx) {
-    console.log(ctx.getText());
-    return super.visitChildren(ctx)
-  };
-
 
   // Visit a parse tree produced by JavaParser#variableInitializer.
   visitVariableInitializer(ctx) {
@@ -496,13 +638,6 @@ class JVisitor extends JavaVisitor {
   };
 
 
-  // Visit a parse tree produced by JavaParser#methodDeclaration.
-  visitMethodDeclaration(ctx) {
-    console.log(ctx.getText());
-    return super.visitChildren(ctx)
-  };
-
-
   // Visit a parse tree produced by JavaParser#methodModifier.
   visitMethodModifier(ctx) {
     console.log(ctx.getText());
@@ -589,13 +724,6 @@ class JVisitor extends JavaVisitor {
 
   // Visit a parse tree produced by JavaParser#exceptionType.
   visitExceptionType(ctx) {
-    console.log(ctx.getText());
-    return super.visitChildren(ctx)
-  };
-
-
-  // Visit a parse tree produced by JavaParser#methodBody.
-  visitMethodBody(ctx) {
     console.log(ctx.getText());
     return super.visitChildren(ctx)
   };
@@ -888,47 +1016,17 @@ class JVisitor extends JavaVisitor {
   };
 
 
-  // Visit a parse tree produced by JavaParser#block.
-  visitBlock(ctx) {
-    console.log(ctx.getText());
-    return super.visitChildren(ctx)
-  };
-
-
   // Visit a parse tree produced by JavaParser#blockStatements.
   visitBlockStatements(ctx) {
     console.log(ctx.getText());
     return super.visitChildren(ctx)
   };
 
-
-  // Visit a parse tree produced by JavaParser#blockStatement.
-  visitBlockStatement(ctx) {
-    console.log(ctx.getText());
-    return super.visitChildren(ctx)
-  };
-
-
   // Visit a parse tree produced by JavaParser#localVariableDeclarationStatement.
   visitLocalVariableDeclarationStatement(ctx) {
     console.log(ctx.getText());
     return super.visitChildren(ctx)
   };
-
-
-  // Visit a parse tree produced by JavaParser#localVariableDeclaration.
-  visitLocalVariableDeclaration(ctx) {
-    console.log(ctx.getText());
-    return super.visitChildren(ctx)
-  };
-
-
-  // Visit a parse tree produced by JavaParser#statement.
-  visitStatement(ctx) {
-    console.log(ctx.getText());
-    return super.visitChildren(ctx)
-  };
-
 
   // Visit a parse tree produced by JavaParser#statementNoShortIf.
   visitStatementNoShortIf(ctx) {
@@ -970,14 +1068,6 @@ class JVisitor extends JavaVisitor {
     console.log(ctx.getText());
     return super.visitChildren(ctx)
   };
-
-
-  // Visit a parse tree produced by JavaParser#statementExpression.
-  visitStatementExpression(ctx) {
-    console.log(ctx.getText());
-    return super.visitChildren(ctx)
-  };
-
 
   // Visit a parse tree produced by JavaParser#ifThenStatement.
   visitIfThenStatement(ctx) {
@@ -1453,14 +1543,6 @@ class JVisitor extends JavaVisitor {
     console.log(ctx.getText());
     return super.visitChildren(ctx)
   };
-
-
-  // Visit a parse tree produced by JavaParser#expression.
-  visitExpression(ctx) {
-    console.log(ctx.getText());
-    return super.visitChildren(ctx)
-  };
-
 
   // Visit a parse tree produced by JavaParser#lambdaExpression.
   visitLambdaExpression(ctx) {
