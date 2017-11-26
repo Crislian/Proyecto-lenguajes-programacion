@@ -2,27 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aee459cd-1184-477f-b215-48303e7a5525" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/OpenSans-Light.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/OpenSans-Light.vlw" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/Drawer.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/PriorityQueue.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/Queue.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/Stack.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lib/p5.min.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/Proyecto-lenguajes-programacion.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/js/DrawTool.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/p5.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/LinkedList.js" afterPath="$PROJECT_DIR$/js/LinkedList.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/List.js" afterPath="$PROJECT_DIR$/js/List.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/index.js" afterPath="$PROJECT_DIR$/js/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/sketch.js" afterPath="$PROJECT_DIR$/js/sketch.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/Stack.js" afterPath="$PROJECT_DIR$/js/Stack.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/Variable.js" afterPath="$PROJECT_DIR$/js/Variable.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/Visitors/JavaVisitor.js" afterPath="$PROJECT_DIR$/js/Visitors/JavaVisitor.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -34,11 +18,178 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileEditorManager">
+    <splitter split-orientation="horizontal" split-proportion="0.53238684">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="JavaVisitor.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/js/Visitors/JavaVisitor.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="8245">
+                  <caret line="577" column="34" lean-forward="true" selection-start-line="577" selection-start-column="34" selection-end-line="577" selection-end-column="34" />
+                  <folding>
+                    <element signature="n#!!block;n#constructor#0;n#JVisitor#0" expanded="false" />
+                    <element signature="n#!!block;n#visitTypeDeclaration#0;n#JVisitor#0" expanded="false" />
+                    <element signature="n#!!block;n#visitClassDeclaration#0;n#JVisitor#0" expanded="false" />
+                    <element signature="n#!!block;n#visitClassBody#0;n#JVisitor#0" expanded="false" />
+                    <element signature="e#1578#1686#0" expanded="false" />
+                    <element signature="n#!!block;n#visitClassBodyDeclaration#0;n#JVisitor#0" expanded="false" />
+                    <element signature="n#!!block;n#visitMemberDeclaration#0;n#JVisitor#0" expanded="false" />
+                    <element signature="n#!!block;n#visitMethodDeclaration#0;n#JVisitor#0" expanded="false" />
+                    <element signature="n#!!block;n#visitBlock#0;n#JVisitor#0" expanded="false" />
+                    <element signature="e#2534#2630#0" expanded="false" />
+                    <element signature="n#!!block;n#visitBlockStatement#0;n#JVisitor#0" expanded="false" />
+                    <element signature="e#2792#2890#0" expanded="false" />
+                    <element signature="e#2915#2983#0" expanded="false" />
+                    <element signature="e#3019#3108#0" expanded="false" />
+                    <element signature="e#4621#4711#0" expanded="false" />
+                    <element signature="n#!!block;n#visitTypeArguments#0;n#JVisitor#0" expanded="false" />
+                    <element signature="n#!!block;n#visitTypeArgument#0;n#JVisitor#0" expanded="false" />
+                    <element signature="e#5121#5187#0" expanded="false" />
+                    <element signature="n#!!block;n#visitVariableDeclaratorId#0;n#JVisitor#0" expanded="false" />
+                    <element signature="n#!!block;n#visitVariableInitializer#0;n#JVisitor#0" expanded="false" />
+                    <element signature="e#6227#6297#0" expanded="false" />
+                    <element signature="n#!!block;n#visitLocalTypeDeclaration#0;n#JVisitor#0" expanded="false" />
+                    <element signature="e#8392#8470#0" expanded="false" />
+                    <element signature="e#8476#8521#0" expanded="false" />
+                    <element signature="e#8674#8797#0" expanded="false" />
+                    <element signature="n#!!block;n#visitCreatedName#0;n#JVisitor#0" expanded="false" />
+                    <element signature="e#9025#9113#0" expanded="false" />
+                    <element signature="n#!!block;n#visitTypeArgumentsOrDiamond#0;n#JVisitor#0" expanded="false" />
+                    <element signature="e#9333#9418#0" expanded="false" />
+                    <element signature="n#!!block;n#visitLiteral#0;n#JVisitor#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Java.g4" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/Java.g4">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="8296">
+                  <caret line="513" column="0" lean-forward="false" selection-start-line="513" selection-start-column="0" selection-end-line="513" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#0#18347#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Stack.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/js/Stack.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="28" lean-forward="false" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="28" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Variable.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/js/Variable.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="51">
+                  <caret line="3" column="45" lean-forward="true" selection-start-line="3" selection-start-column="45" selection-end-line="3" selection-end-column="45" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Type.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/js/Type.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="153">
+                  <caret line="9" column="21" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="21" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="List.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/js/List.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="34">
+                  <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="4" selection-end-column="12" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Value.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/js/Value.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="CallFunc.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/js/CallFunc.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="153">
+                  <caret line="9" column="25" lean-forward="false" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="Java.g4" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/Java.g4">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="211">
+                  <caret line="432" column="0" lean-forward="false" selection-start-line="432" selection-start-column="0" selection-end-line="432" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#0#18347#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>variable</find>
+      <find>expression</find>
+      <find>valueRight</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>valL</replace>
+      <replace>valR</replace>
+    </replaceStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/js/Stack.js" />
+        <option value="$PROJECT_DIR$/Java.g4" />
+        <option value="$PROJECT_DIR$/js/Variable.js" />
+        <option value="$PROJECT_DIR$/js/CallFunc.js" />
+        <option value="$PROJECT_DIR$/js/List.js" />
+        <option value="$PROJECT_DIR$/js/Visitors/JavaVisitor.js" />
+      </list>
+    </option>
+  </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <annotation-enable>false</annotation-enable>
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
@@ -64,7 +215,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -72,17 +222,37 @@
               <item name="Proyecto-lenguajes-programacion" type="b2602c69:ProjectViewProjectNode" />
               <item name="Proyecto-lenguajes-programacion" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Proyecto-lenguajes-programacion" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Proyecto-lenguajes-programacion" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Proyecto-lenguajes-programacion" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Proyecto-lenguajes-programacion" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="Visitors" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
+    <property name="JavaScriptPreferStrict" value="false" />
+    <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Cristian\Documents\ANTLR\Proyecto-lenguajes-programacion\js" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -96,8 +266,25 @@
       </list>
     </option>
   </component>
+  <component name="RunManager" selected="JavaScript Debug.index.html">
+    <configuration name="index.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Proyecto-lenguajes-programacion/index.html" />
+    <configuration name="index.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="index.js" working-dir="$PROJECT_DIR$/js" />
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="Node.js.index.js" />
+      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
+    </list>
+    <recent_temporary>
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
+        <item index="1" class="java.lang.String" itemvalue="Node.js.index.js" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -106,33 +293,35 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1511559114401</updated>
-      <workItem from="1511559116198" duration="13000" />
+      <workItem from="1511559116198" duration="36469000" />
+      <workItem from="1511678195679" duration="15542000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13000" />
+    <option name="totallyTimeSpent" value="52011000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16145833" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Tool Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="ANTLR Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Tool Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="ANTLR Preview" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -143,7 +332,228 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="5" />
+    </breakpoint-manager>
     <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/js/Visitors/JavaVisitor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2465">
+          <caret line="207" column="43" lean-forward="false" selection-start-line="207" selection-start-column="43" selection-end-line="207" selection-end-column="43" />
+          <folding>
+            <element signature="n#!!block;n#constructor#0;n#JVisitor#0" expanded="false" />
+            <element signature="n#!!block;n#visitTypeDeclaration#0;n#JVisitor#0" expanded="false" />
+            <element signature="n#!!block;n#visitClassDeclaration#0;n#JVisitor#0" expanded="false" />
+            <element signature="n#!!block;n#visitClassBody#0;n#JVisitor#0" expanded="false" />
+            <element signature="e#1578#1686#0" expanded="false" />
+            <element signature="n#!!block;n#visitClassBodyDeclaration#0;n#JVisitor#0" expanded="false" />
+            <element signature="n#!!block;n#visitMemberDeclaration#0;n#JVisitor#0" expanded="false" />
+            <element signature="n#!!block;n#visitMethodDeclaration#0;n#JVisitor#0" expanded="false" />
+            <element signature="n#!!block;n#visitBlock#0;n#JVisitor#0" expanded="false" />
+            <element signature="e#2534#2630#0" expanded="false" />
+            <element signature="n#!!block;n#visitBlockStatement#0;n#JVisitor#0" expanded="false" />
+            <element signature="e#2792#2890#0" expanded="false" />
+            <element signature="e#2915#2983#0" expanded="false" />
+            <element signature="e#3019#3108#0" expanded="false" />
+            <element signature="e#4621#4711#0" expanded="false" />
+            <element signature="n#!!block;n#visitTypeArguments#0;n#JVisitor#0" expanded="false" />
+            <element signature="n#!!block;n#visitTypeArgument#0;n#JVisitor#0" expanded="false" />
+            <element signature="e#5121#5187#0" expanded="false" />
+            <element signature="n#!!block;n#visitVariableDeclaratorId#0;n#JVisitor#0" expanded="false" />
+            <element signature="n#!!block;n#visitVariableInitializer#0;n#JVisitor#0" expanded="false" />
+            <element signature="e#6227#6297#0" expanded="false" />
+            <element signature="n#!!block;n#visitLocalTypeDeclaration#0;n#JVisitor#0" expanded="false" />
+            <element signature="e#8392#8470#0" expanded="false" />
+            <element signature="e#8476#8521#0" expanded="false" />
+            <element signature="e#8674#8797#0" expanded="false" />
+            <element signature="n#!!block;n#visitCreatedName#0;n#JVisitor#0" expanded="false" />
+            <element signature="e#9025#9113#0" expanded="false" />
+            <element signature="n#!!block;n#visitTypeArgumentsOrDiamond#0;n#JVisitor#0" expanded="false" />
+            <element signature="e#9333#9418#0" expanded="false" />
+            <element signature="n#!!block;n#visitLiteral#0;n#JVisitor#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/CallFunc.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="25" lean-forward="false" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/Stack.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="28" lean-forward="true" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/Variable.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="26" lean-forward="false" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/Type.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/List.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="5" lean-forward="true" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/Value.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Java.g4">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8721">
+          <caret line="513" column="0" lean-forward="false" selection-start-line="513" selection-start-column="0" selection-end-line="513" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#18347#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/Stack.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="28" lean-forward="false" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generated-parser/JavaVisitor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="113">
+          <caret line="543" column="0" lean-forward="false" selection-start-line="543" selection-start-column="0" selection-end-line="543" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/LinkedList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="28" lean-forward="false" selection-start-line="0" selection-start-column="28" selection-end-line="0" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/CallFunc.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="25" lean-forward="false" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Java.g4">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8296">
+          <caret line="513" column="0" lean-forward="false" selection-start-line="513" selection-start-column="0" selection-end-line="513" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#18347#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/Variable.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="45" lean-forward="true" selection-start-line="3" selection-start-column="45" selection-end-line="3" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/Value.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/Type.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="21" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="31" lean-forward="true" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/List.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="4" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/Visitors/JavaVisitor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8245">
+          <caret line="577" column="34" lean-forward="true" selection-start-line="577" selection-start-column="34" selection-end-line="577" selection-end-column="34" />
+          <folding>
+            <element signature="n#!!block;n#constructor#0;n#JVisitor#0" expanded="false" />
+            <element signature="n#!!block;n#visitTypeDeclaration#0;n#JVisitor#0" expanded="false" />
+            <element signature="n#!!block;n#visitClassDeclaration#0;n#JVisitor#0" expanded="false" />
+            <element signature="n#!!block;n#visitClassBody#0;n#JVisitor#0" expanded="false" />
+            <element signature="e#1578#1686#0" expanded="false" />
+            <element signature="n#!!block;n#visitClassBodyDeclaration#0;n#JVisitor#0" expanded="false" />
+            <element signature="n#!!block;n#visitMemberDeclaration#0;n#JVisitor#0" expanded="false" />
+            <element signature="n#!!block;n#visitMethodDeclaration#0;n#JVisitor#0" expanded="false" />
+            <element signature="n#!!block;n#visitBlock#0;n#JVisitor#0" expanded="false" />
+            <element signature="e#2534#2630#0" expanded="false" />
+            <element signature="n#!!block;n#visitBlockStatement#0;n#JVisitor#0" expanded="false" />
+            <element signature="e#2792#2890#0" expanded="false" />
+            <element signature="e#2915#2983#0" expanded="false" />
+            <element signature="e#3019#3108#0" expanded="false" />
+            <element signature="e#4621#4711#0" expanded="false" />
+            <element signature="n#!!block;n#visitTypeArguments#0;n#JVisitor#0" expanded="false" />
+            <element signature="n#!!block;n#visitTypeArgument#0;n#JVisitor#0" expanded="false" />
+            <element signature="e#5121#5187#0" expanded="false" />
+            <element signature="n#!!block;n#visitVariableDeclaratorId#0;n#JVisitor#0" expanded="false" />
+            <element signature="n#!!block;n#visitVariableInitializer#0;n#JVisitor#0" expanded="false" />
+            <element signature="e#6227#6297#0" expanded="false" />
+            <element signature="n#!!block;n#visitLocalTypeDeclaration#0;n#JVisitor#0" expanded="false" />
+            <element signature="e#8392#8470#0" expanded="false" />
+            <element signature="e#8476#8521#0" expanded="false" />
+            <element signature="e#8674#8797#0" expanded="false" />
+            <element signature="n#!!block;n#visitCreatedName#0;n#JVisitor#0" expanded="false" />
+            <element signature="e#9025#9113#0" expanded="false" />
+            <element signature="n#!!block;n#visitTypeArgumentsOrDiamond#0;n#JVisitor#0" expanded="false" />
+            <element signature="e#9333#9418#0" expanded="false" />
+            <element signature="n#!!block;n#visitLiteral#0;n#JVisitor#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>

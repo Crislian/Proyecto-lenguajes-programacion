@@ -14,7 +14,7 @@ class Stack extends List {
     }
 
     push(element) {
-        // this.add(element)
+        this.add(element)
     }
 }
 
