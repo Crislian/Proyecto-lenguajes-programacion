@@ -3,7 +3,7 @@ class Variable{
     constructor(isConstant, name, value){
         this.isConstant = isConstant; // Bool
         this.name = name; // String
-        this.valor = value; // Value
+        this.value = value; // Value
     }
 }
 

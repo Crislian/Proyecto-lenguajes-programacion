@@ -1,8 +1,8 @@
 class List {
     constructor() {
-        if (this.constructor === List) {
-            throw new Error("Can't instantiate abstract class!");
-        }
+        // if (this.constructor === List) {
+        //     throw new Error("Can't instantiate abstract class!");
+        // }
         this._storage = new Array();
     }
 
