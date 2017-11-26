@@ -1,4 +1,4 @@
-const List = require("js/List");
+const List = require("js/Structures/List");
 
 class Stack extends List {
     constructor() {
@@ -14,7 +14,7 @@ class Stack extends List {
     }
 
     push(element) {
-        // this.add(element)
+        this.add(element)
     }
 }
 

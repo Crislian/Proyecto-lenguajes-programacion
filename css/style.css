@@ -4,8 +4,8 @@ html, body {
     padding: 0;
 }
 
-.input {
-    height: 100%;
+canvas:hover {
+    overflow: hidden;
 }
 
 .gutter-error {
