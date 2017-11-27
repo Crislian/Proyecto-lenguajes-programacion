@@ -12,8 +12,8 @@ const Queue = require('js/Structures/Queue');
 const Stack = require('js/Structures/Stack');
 
 
-let tables = new Array();
-let arrayOfTables = new Array();
+let tables = [];
+let arrayOfTables = [];
 
 let structures = new Set();
 structures.add("LinkedList");
@@ -34,9 +34,8 @@ class JVisitor extends JavaVisitor {
     // Visit a parse tree produced by JavaParser#compilationUnit.
     visitCompilationUnit(ctx) {
         this.clearTables();
-
         this.visitTypeDeclaration(ctx.typeDeclaration(0));
-        return tables;
+        return arrayOfTables;
     };
 
     // Visit a parse tree produced by JavaParser#typeDeclaration.
@@ -384,19 +383,21 @@ class JVisitor extends JavaVisitor {
     // ************************************************
     // ************************************************
 
-    copyTables(){
+    copyTables() {
         let newArr = new Array();
-        for(let table of tables){
+        for (let table of tables) {
             let newMap = new Map();
-            for(let [key, value] of table){
-                newMap.set(key, $.extend( true ,{}, value));
+            for (let [key, variable] of table) {
+                newMap.set(key, new Variable(variable.isConstant, variable.name, new Value(Object.assign({}, variable.value.type), variable.value.val)));
             }
             newArr.push(newMap);
+            if (newMap === table)
+                console.log(":)")
         }
         return newArr;
     }
 
-    switchStatement(ctx){
+    switchStatement(ctx) {
         let valueExpression = this.visitParExpression(ctx.parExpression());
         let index = 0;
         let flag = false;
@@ -537,8 +538,11 @@ class JVisitor extends JavaVisitor {
     }
 
     clearTables() {
+        while (arrayOfTables != 0) {
+            arrayOfTables.pop();
+        }
         while (tables.length != 0) {
-            tables.pop()
+            tables.pop();
         }
     }
 
@@ -626,7 +630,7 @@ class JVisitor extends JavaVisitor {
     }
 
     // Binary operators evaluation
-    binOpEvaluation(valueLeft, valueRight, ctx){
+    binOpEvaluation(valueLeft, valueRight, ctx) {
         let valL, valR;
         valL = valueLeft.val;
         valR = valueRight.val;

@@ -8,6 +8,8 @@ var code = "";
 var editor;
 var typingTimer;                //timer identifier
 var doneTypingInterval = 1000; // wait time millis
+var arrTables;
+var slider = document.getElementById("myRange");
 
 // Error managment
 var err = console.error;
@@ -18,8 +20,10 @@ var Lexer, Parser, Visitor;
 
 $(document).ready(function () {
     setMode(mode);
-
-
+    $("#myRange").on("input change", function () {
+        // LINEA
+        Drawer.variables(arrTables[slider.value][1]);
+    });
     // Code to put timer
     editor.on("keyup", function () {
         clearTimeout(typingTimer);
@@ -31,7 +35,11 @@ $(document).ready(function () {
             code = editor.getValue();
             console.clear();
             setTimeout(() => {
-                Drawer.variables(visit(code));
+                arrTables = visit(code)
+                slider.min = 0;
+                slider.value = 0;
+                slider.max = arrTables.length - 1;
+                Drawer.variables(arrTables[0][1]);
             }, 1);
         }, doneTypingInterval);
     });
@@ -54,8 +62,6 @@ console.error = function (e) {
 };
 
 function setMode(m) {
-    
-    
     editor = CodeMirror(document.getElementById("input"), {
         lineNumbers: true,
         matchBrackets: true,

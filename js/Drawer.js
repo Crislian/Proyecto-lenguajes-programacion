@@ -39,8 +39,6 @@ class Drawer {
             }
         }
         this.drawPanels();
-        console.log("Ill draw");
-        console.log(tables);
         this.structures(structs);
         this.drawVariables(vars);
     }
