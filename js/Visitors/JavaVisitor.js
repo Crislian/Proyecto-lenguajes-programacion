@@ -375,6 +375,39 @@ class JVisitor extends JavaVisitor {
         }
     };
 
+    // Copied from:
+
+    clone(obj) {
+        let copy;
+
+        if (obj === null || typeof obj !== 'object') {
+            return obj;
+        }
+
+        if (obj instanceof Map) {
+            return new Map(this.clone(Array.from(obj)));
+        }
+
+        if (obj instanceof Array) {
+            copy = [];
+            for (let i = 0, len = obj.length; i < len; i++) {
+                copy[i] = this.clone(obj[i]);
+            }
+            return copy;
+        }
+
+        if (obj instanceof Object) {
+            copy = {};
+            for (const attr in obj) {
+                // if (obj.hasOwnProperty(attr)) {
+                copy[attr] = this.clone(obj[attr]);
+                // }
+            }
+            return copy;
+        }
+        throw new Error('Unable to copy object! Its type isn\'t supported');
+    }
+
     // ************************************************
     // ************************************************
     // ******************* OWN FUNCTIONS **************
@@ -382,18 +415,10 @@ class JVisitor extends JavaVisitor {
     // ************************************************
 
     copyTables() {
-        let newArr = new Array();
-        for (let table of tables) {
-            let newMap = new Map();
-            for (let [key, variable] of table) {
-                newMap.set(key, new Variable(variable.isConstant, variable.name, new Value(Object.assign({}, variable.value.type), variable.value.val)));
-            }
-            newArr.push(newMap);
-            if (newMap === table)
-                console.log(":)")
-        }
+        let newArr = this.clone(tables);
         return newArr;
     }
+
 
     switchStatement(ctx) {
         let valueExpression = this.visitParExpression(ctx.parExpression());
