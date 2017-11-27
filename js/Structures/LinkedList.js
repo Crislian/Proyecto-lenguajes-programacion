@@ -1,4 +1,4 @@
-const List = require("js/List");
+const List = require("js/Structures/List");
 
 class LinkedList extends List {
     constructor() {
@@ -23,10 +23,6 @@ class LinkedList extends List {
 
     getLast() {
         return this.get(this.size() - 1);
-    }
-
-    lastIndexOf(element) {
-        return this._storage.lastIndexOf(element);
     }
 
     peek() {
