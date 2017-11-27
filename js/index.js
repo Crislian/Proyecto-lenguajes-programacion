@@ -6,64 +6,8 @@ require("lib/codemirror/clike");
 var mode = "Java";
 var code = "";
 var editor;
-// <<<<<<< HEAD
-// initEditor();
-
-var initialCode = "public class Main{\n" +
-    " public static void main(String []args){\n" +
-    "  \t\n" +
-    " }\n" +
-    "}";
-
-// function initEditor() {
-//     editor = CodeMirror(document.getElementById("input"), {
-//         lineNumbers: true,
-//         matchBrackets: true,
-//         styleActiveLine: true,
-//         indentUnit:4,
-//         mode: "text/x-" + mode.toLowerCase(),
-//         value: "public class Main{\n\tpublic static void main(String[] args){\n\t\t\n\t}\t\n}",
-//         smartIdent:true
-//     });
-// }
-
-// Wait time until stop typing
 var typingTimer;                //timer identifier
-// <<<<<<< HEAD
-// var doneTypingInterval = 1000; // tiempo de espera
-// // Code to put timer
-// editor.on("keyup", function () {
-//     clearTimeout(typingTimer);
-//     if (editor.getValue()) {
-//         typingTimer = setTimeout(doneTyping, doneTypingInterval);
-//     }
-// });
-//
-// function doneTyping() {
-//     for (l of lines) {
-//         var gutter = $(".CodeMirror-code:first")[0].children[l].firstChild.firstChild;
-//         gutter.className = "CodeMirror-linenumber CodeMirror-gutter-elt";
-//     }
-//     lines = [];
-//     console.clear();
-//     code = editor.getValue();
-//     console.log(code);
-//     setTimeout(() => {
-//         visit(code);
-//     }, 1);
-// }
-//
-// // Error advice
-// var gutter = document.querySelectorAll('.CodeMirror-linenumber');
-// for (lineNumber of gutter) {
-//     lineNumber.addEventListener('mouseover', function (e) {
-//         if (this.error != undefined)
-//             alert(this.error)
-//     });
-// }
-// =======
 var doneTypingInterval = 1000; // wait time millis
-// >>>>>>> 4a2f77d6618c5ca26dee8ae280e1480256514e43
 
 // Error managment
 var err = console.error;
@@ -74,7 +18,6 @@ var Lexer, Parser, Visitor;
 
 $(document).ready(function () {
     setMode(mode);
-
     // Code to put timer
     editor.on("keyup", function () {
         clearTimeout(typingTimer);
@@ -86,7 +29,7 @@ $(document).ready(function () {
             code = editor.getValue();
             console.clear();
             setTimeout(() => {
-                visit(code);
+                Drawer.variables(visit(code));
             }, 1);
         }, doneTypingInterval);
     });
@@ -134,7 +77,7 @@ function visit(code) {
     parser.buildParseTrees = true;
     let tree = parser.compilationUnit();
     try {
-        visitor.visitCompilationUnit(tree);
+        return visitor.visitCompilationUnit(tree);
     } catch (e) {
         err(e);
     }

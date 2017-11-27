@@ -25,10 +25,6 @@ class LinkedList extends List {
         return this.get(this.size() - 1);
     }
 
-    lastIndexOf(element) {
-        return this._storage.lastIndexOf(element);
-    }
-
     peek() {
         return this.getFirst();
     }

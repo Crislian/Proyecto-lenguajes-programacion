@@ -3,7 +3,7 @@ class CallFunc{
     constructor(nameVar, nameFunc) {
         this.nameVar = nameVar; // String
         this.nameFunc = nameFunc; // String
-        this.paramList = Array();
+        this.paramList = new Array();
     }
 }
 

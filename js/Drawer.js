@@ -27,30 +27,41 @@ class Drawer {
         pop();
     }
 
-    static variables(variables) {
+    static variables(tables) {
         var vars = new Map(),
             structs = new Map();
-        for (var [name, value] of variables) {
-            if (value.elements != undefined)
-                structs.set(name, value);
-            else
-                vars.set(name, value);
+        for (let table of tables) {
+            for (var [name, variable] of table) {
+                if (variable.value.type.isPrimitive)
+                    vars.set(name, variable);
+                else
+                    structs.set(name, variable);
+            }
         }
         this.drawPanels();
         this.structures(structs);
-        this.varTable(vars);
+        this.drawVariables(vars);
     }
 
-    static varTable(vars) {
+    static drawVariables(vars) {
         var i = 0;
         for (var [varName, varVal] of vars) {
             push();
             translate(2 * width / 3, i * 20 + 35);
             fill(26, 7, 84);
             textAlign(LEFT, TOP);
-            text(varName + ":", 15, 0);
+            let type = "";
+            if (varVal.isConstant)
+                type = "final";
+            textSize(16);
+            text(type + " " + varVal.value.type.mainType + " " + varName + ":", 15, 0);
+            textAlign(CENTER, CENTER);
             textAlign(RIGHT, TOP);
-            text(varVal, width / 3 - 15, 0);
+            if (varVal.value.val == null)
+                varVal.value.val = "null";
+            text(varVal.value.val, width / 3 - 15, 0);
+            if (varVal.value.val == "null")
+                varVal.value.val = null;
             pop();
             i++;
         }
@@ -61,14 +72,15 @@ class Drawer {
         push();
         translate(15, 35);
         for (var [varName, struct] of structs) {
-            var structName = struct.constructor.name;
+            var structName = struct.value.type.mainType;
             textAlign(LEFT, TOP);
             fill(26, 7, 84);
             translate(0, h - 10);
             text(varName + " - " + structName, 0, 0);
             translate(0, 35);
-            h = eval("Drawer.draw" + structName)(struct.elements.map(function (obj) {
-                return obj.toString();
+            if (!struct.value.val.elements.length == 0)
+            h = eval("Drawer.draw" + structName)(struct.value.val.elements.map(function (obj) {
+                return obj.val.toString();
             }));
         }
         pop();
