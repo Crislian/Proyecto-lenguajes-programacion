@@ -19,7 +19,7 @@ class List {
     }
 
     contains(element) {
-        if (this.indexOf(element).val !== -1)
+        if (this.indexOf(element).val == -1)
             return new Value(new Type(true, "boolean", null), false);
         return new Value(new Type(true, "boolean", null), true);
     }
