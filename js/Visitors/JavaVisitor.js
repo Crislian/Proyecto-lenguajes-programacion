@@ -12,6 +12,8 @@ const Queue = require('js/Structures/Queue');
 const Stack = require('js/Structures/Stack');
 
 let tables = new Array();
+let arrayOfTables = new Array();
+
 let structures = new Set();
 structures.add("LinkedList");
 structures.add("ArrayList");
@@ -120,6 +122,8 @@ class JVisitor extends JavaVisitor {
                 dec.value = new Value(type, null);
             }
             this.insertVariable(new Variable(isFinal, dec.name, dec.value));
+            let line = ctx.start.line;
+            arrayOfTables.push([line, this.copyTables()]);
         }
         return;
     };
@@ -146,7 +150,6 @@ class JVisitor extends JavaVisitor {
 
     // Visit a parse tree produced by JavaParser#typeArguments.
     visitTypeArguments(ctx) {
-        console.log("Args " + ctx.getText());
         return this.visitTypeArgument(ctx.typeArgument(0));
     };
 
@@ -192,7 +195,6 @@ class JVisitor extends JavaVisitor {
     };
 
     visitLocalTypeDeclaration(ctx) {
-        console.log("Type dec " + ctx.getText());
         return super.visitChildren(ctx);
     }
 
@@ -211,19 +213,24 @@ class JVisitor extends JavaVisitor {
             return this.postfixEvaluation(value, ctx.postfix.text);
         } else if (ctx.prefix) {
             let value = this.visitExpression(ctx.expression(0));
-            return this.prefixEvaluation(value, ctx.prefix.text);
+            console.log(value);
+            return this.prefixEvaluation(value, ctx);
         } else if (ctx.bop) {
             let valueLeft = this.visitExpression(ctx.expression(0));
             let valueRight = this.visitExpression(ctx.expression(1));
-            return this.binOpEvaluation(valueLeft, valueRight, ctx.bop.text);
+            console.log(valueLeft);
+            return this.binOpEvaluation(valueLeft, valueRight, ctx);
         } else { // expression of call structure functions
             let call = this.visitExpression(ctx.expression(0));
             if (ctx.expressionList()) {
                 call.paramList = this.visitExpressionList(ctx.expressionList());
             }
+
             console.log(call.nameVar.val[call.nameFunc])
             let c = call.nameVar.val[call.nameFunc].apply(call.nameVar.val, call.paramList);
             console.log("VALUE: " + c);
+            let line = ctx.start.line;
+            arrayOfTables.push([line, this.copyTables()]);
             return c;
         }
     };
@@ -382,6 +389,19 @@ class JVisitor extends JavaVisitor {
     // ************************************************
     // ************************************************
 
+
+    copyTables(){
+        let newArr = new Array();
+        for(let table of tables){
+            let newMap = new Map();
+            for(let [key, value] of table){
+                newMap.set(key, $.extend( true ,{}, value));
+            }
+            newArr.push(newMap);
+        }
+        return newArr;
+    }
+
     switchStatement(ctx){
         let valueExpression = this.visitParExpression(ctx.parExpression());
         let index = 0;
@@ -469,10 +489,16 @@ class JVisitor extends JavaVisitor {
             let newVariable = new Variable(isConstant, varID, new Value(type, null));
             this.insertVariable(newVariable);
 
+            let line = ctx.start.line;
+            arrayOfTables.push([line, this.copyTables()]);
+
             for(let i = 0; i < valueExp.val.size(); i++){
                 hasToContinue = false;
                 let aux = valueExp.val.get(i);
                 newVariable.value.val = aux;
+                line = ctx.start.line;
+                arrayOfTables.push([line, this.copyTables()]);
+
                 this.visitStatement(ctx.statement(0));
                 if(hasToBreak) break;
             }
@@ -586,98 +612,121 @@ class JVisitor extends JavaVisitor {
         }
     }
 
-    prefixEvaluation(value, sign) {
+    prefixEvaluation(value, ctx) {
+        let sign = ctx.prefix.text;
+        let line = ctx.start.line;
         switch (sign) {
             case "++":
-                return ++value;
+                ++value.val;
+                arrayOfTables.push([line, this.copyTables()]);
+                return value;
             case "--":
-                return --value;
+                --value.val;
+                arrayOfTables.push([line, this.copyTables()]);
+                return value;
             case "-":
-                return (value * -1);
+                return new Value(value.type, (value.val * -1));
             case "~":
-                return (~value);
+                return new Value(value.type, (~value.val));
             case "!":
-                return (!value);
+                return new Value(value.type, (!value.val));
         }
     }
 
     // Binary operators evaluation
-    binOpEvaluation(valueLeft, valueRight, operator){
+    binOpEvaluation(valueLeft, valueRight, ctx){
         let valL, valR;
         valL = valueLeft.val;
         valR = valueRight.val;
+        let operator = ctx.bop.text;
+        let intType = new Type(true, "int", null);
+        let boolType = new Type(true, "boolean", null);
+        let line = ctx.start.line;
+
         switch (operator) {
             case "*":
-                return new Value("int", valL * valR);
+                return new Value(intType, valL * valR);
             case "/":
-                return new Value("int", valL / valR);
+                return new Value(intType, valL / valR);
             case "%":
-                return new Value("int", valL % valR);
+                return new Value(intType, valL % valR);
             case "+":
-                return new Value("int", valL + valR);
+                return new Value(intType, valL + valR);
             case "-":
-                return new Value("int", valL - valR);
+                return new Value(intType, valL - valR);
             case "<=":
-                return new Value("boolean", valL <= valL);
+                return new Value(boolType, valL <= valL);
             case ">=":
-                return new Value("boolean", valL >= valR);
+                return new Value(boolType, valL >= valR);
             case ">":
-                return new Value("boolean", valL > valR);
+                return new Value(boolType, valL > valR);
             case "<":
-                return new Value("boolean", valL < valR);
+                return new Value(boolType, valL < valR);
             case "==":
-                return new Value("boolean", valL == valR);
+                return new Value(boolType, valL == valR);
             case "!=":
-                return new Value("boolean", valL != valR);
+                return new Value(boolType, valL != valR);
             case "&":
-                return new Value("int", valL & valR);
+                return new Value(intType, valL & valR);
             case "^":
-                return new Value("int", valL ^ valR);
+                return new Value(intType, valL ^ valR);
             case "|":
-                return new Value("int", valL | valR);
+                return new Value(intType, valL | valR);
             case "&&":
-                return new Value("boolean", valL && valR);
+                return new Value(boolType, valL && valR);
             case "||":
-                return new Value("boolean", valL || valR);
+                return new Value(boolType, valL || valR);
             case "&&":
-                return new Value("boolean", valL && valR);
+                return new Value(boolType, valL && valR);
             case "=":
                 if(valueLeft.type.mainType !== valueRight.type.mainType)
                     valueLeft.val = this.instantiateObject(valueLeft.type, null);
                 else valueLeft.val = valueRight.val;
+                arrayOfTables.push([line, this.copyTables()]);
                 return valueLeft;
             case "+=":
                 valueLeft.val += valueRight.val;
+                arrayOfTables.push([line, this.copyTables()]);
                 return valueLeft;
             case "-=":
                 valueLeft.val -= valueRight.val;
+                arrayOfTables.push([line, this.copyTables()]);
                 return valueLeft;
             case "*=":
                 valueLeft.val *= valueRight.val;
+                arrayOfTables.push([line, this.copyTables()]);
                 return valueLeft;
             case "/=":
                 valueLeft.val /= valueRight.val;
+                arrayOfTables.push([line, this.copyTables()]);
                 return valueLeft;
             case "&=":
                 valueLeft.val &= valueRight.val;
+                arrayOfTables.push([line, this.copyTables()]);
                 return valueLeft;
             case "|=":
                 valueLeft.val |= valueRight.val;
+                arrayOfTables.push([line, this.copyTables()]);
                 return valueLeft;
             case "^=":
                 valueLeft.val ^= valueRight.val;
+                arrayOfTables.push([line, this.copyTables()]);
                 return valueLeft;
             case ">>=":
                 valueLeft.val >>= valueRight.val;
+                arrayOfTables.push([line, this.copyTables()]);
                 return valueLeft;
             case ">>>=":
                 valueLeft.val >>>= valueRight.val;
+                arrayOfTables.push([line, this.copyTables()]);
                 return valueLeft;
             case "<<=":
                 valueLeft.val <<= valueRight.val;
+                arrayOfTables.push([line, this.copyTables()]);
                 return valueLeft;
             case "%=":
                 valueLeft.val %= valueRight.val;
+                arrayOfTables.push([line, this.copyTables()]);
                 return valueLeft;
         }
     }

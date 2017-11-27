@@ -18,6 +18,8 @@ var Lexer, Parser, Visitor;
 
 $(document).ready(function () {
     setMode(mode);
+
+
     // Code to put timer
     editor.on("keyup", function () {
         clearTimeout(typingTimer);
@@ -52,6 +54,8 @@ console.error = function (e) {
 };
 
 function setMode(m) {
+    
+    
     editor = CodeMirror(document.getElementById("input"), {
         lineNumbers: true,
         matchBrackets: true,
