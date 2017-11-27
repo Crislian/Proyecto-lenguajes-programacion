@@ -1,7 +1,6 @@
 const JavaVisitor = require('generated-parser/JavaVisitor').JavaVisitor;
 const Variable = require('js/Variable');
 const Type = require('js/Type');
-// const DataType = require('js/DataType');
 const Declarator = require('js/Declarator');
 const Value = require('js/Value');
 const CallFunc = require('js/CallFunc');
@@ -52,7 +51,7 @@ class JVisitor extends JavaVisitor {
     visitClassBody(ctx) {
         let index = 0;
         while (ctx.classBodyDeclaration(index)) {
-            this.visitClassBodyDeclaration(ctx.classBodyDeclaration(index))
+            this.visitClassBodyDeclaration(ctx.classBodyDeclaration(index));
             index++;
         }
         return
@@ -85,7 +84,7 @@ class JVisitor extends JavaVisitor {
     visitBlock(ctx) {
         let index = 0;
         while (ctx.blockStatement(index)) {
-            this.visitBlockStatement(ctx.blockStatement(index))
+            this.visitBlockStatement(ctx.blockStatement(index));
             index++;
         }
         return
@@ -121,8 +120,6 @@ class JVisitor extends JavaVisitor {
             this.insertVariable(new Variable(isFinal, dec.name, dec.value));
             let line = ctx.start.line;
             arrayOfTables.push([line, this.copyTables()]);
-            console.log(arrayOfTables);
-            this.printVariables()
         }
         return;
     };
@@ -212,25 +209,23 @@ class JVisitor extends JavaVisitor {
             return this.postfixEvaluation(value, ctx.postfix.text);
         } else if (ctx.prefix) {
             let value = this.visitExpression(ctx.expression(0));
-            console.log(value);
             return this.prefixEvaluation(value, ctx);
         } else if (ctx.bop) {
             let valueLeft = this.visitExpression(ctx.expression(0));
             let valueRight = this.visitExpression(ctx.expression(1));
-            console.log(valueLeft);
             return this.binOpEvaluation(valueLeft, valueRight, ctx);
         } else { // expression of call structure functions
             let call = this.visitExpression(ctx.expression(0));
             if (ctx.expressionList())
                 call.paramList = this.visitExpressionList(ctx.expressionList());
+            let c = call.nameVar.val[call.nameFunc].apply(call.nameVar.val, call.paramList);
             let line = ctx.start.line;
             arrayOfTables.push([line, this.copyTables()]);
-            return call.nameVar.val[call.nameFunc].apply(call.nameVar.val, call.paramList);
+            return c;
         }
     };
 
     visitCreator(ctx) {
-        console.log("Creator " + ctx.getText())
         let type = this.visitCreatedName(ctx.createdName());
         let listArgs = this.visitClassCreatorRest(ctx.classCreatorRest());
         let val = this.instantiateObject(type, listArgs);
@@ -262,7 +257,6 @@ class JVisitor extends JavaVisitor {
     }
 
     visitCreatedName(ctx) {
-        console.log("Created Nme " + ctx.getText())
         let name = ctx.IDENTIFIER(0).getText();
         let secondType = null;
         if (ctx.typeArgumentsOrDiamond(0)) {
@@ -309,7 +303,6 @@ class JVisitor extends JavaVisitor {
             typeName = "null";
         }
         val = this.strToType(typeName, val);
-        console.log("literal " + typeName + " " + val);
         return (new Value(new Type(true, typeName, null), val));
     };
 
@@ -345,7 +338,7 @@ class JVisitor extends JavaVisitor {
             return;
         } else if (ctx.block()) {
             this.addTable();
-            this.visitBlock(ctx.block())
+            this.visitBlock(ctx.block());
             this.removeTable();
         }
         return

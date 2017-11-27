@@ -20,7 +20,7 @@ var Lexer, Parser, Visitor;
 
 $(document).ready(function () {
     setMode(mode);
-    $("#myRange").on("input change", function () {
+    $("#myRange").on("input", function () {
         // LINEA
         Drawer.variables(arrTables[slider.value][1]);
     });
