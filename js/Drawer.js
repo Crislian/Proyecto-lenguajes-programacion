@@ -78,8 +78,9 @@ class Drawer {
             translate(0, h - 10);
             text(varName + " - " + structName + "<" + struct.value.type.subType + ">", 0, 0);
             translate(0, 35);
-            if (!struct.value.val.elements.length == 0)
-                h = eval("Drawer.draw" + structName)(struct.value.val.elements.map(function (obj) {
+            console.log(struct.value.val._storage)
+            if (struct.value.val._storage != null && !struct.value.val._storage.length == 0)
+                h = eval("Drawer.draw" + structName)(struct.value.val._storage.map(function (obj) {
                     return obj.val.toString();
                 }));
         }
