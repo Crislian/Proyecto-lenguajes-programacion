@@ -4,6 +4,13 @@ html, body {
     padding: 0;
 }
 
+.gutter-highlight {
+    background-color: #4CAF50;
+    position: relative;
+    display: inline-block;
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+}
+
 .gutter-error {
     background-color: #ff8f8f;
     position: relative;

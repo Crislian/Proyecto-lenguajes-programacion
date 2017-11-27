@@ -9,25 +9,19 @@ function preload() {
 }
 
 function setup() {
-    resize = true;
     textFont(openSans, 14);
-    zoom = 1;
-    zoomAt = createVector(0, 0)
-    canvas = createCanvas(windowWidth, windowHeight);
+    // resize = true;
+    // zoom = 1;
+    // zoomAt = createVector(0, 0)
+    canvas = createCanvas(windowWidth - 30, 1000);
     canvas.parent('#canvas');
     colorMode(HSB);
     Drawer.variables(new Map());
 }
 
-function draw() {
-    // translate(zoomAt.x, zoomAt.y);
-    // scale(zoom);
-    // translate(-zoomAt.x, -zoomAt.y);
-}
-
 function windowResized() {
-    resizeCanvas(windowWidth, windowHeight);
-    Drawer.variables(visit(code));
+    resizeCanvas(windowWidth - 30, 1000);
+    Drawer.variables(arrTables[slider.value][1]);
 }
 
 function mouseWheel(event) {

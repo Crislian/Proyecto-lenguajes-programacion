@@ -1,3 +1,6 @@
+const Type = require('js/Type'),
+    Value = require('js/Value');
+
 class List {
     constructor() {
         this._storage = [];
@@ -65,8 +68,8 @@ class List {
 
     set(index, element) {
         let oldElement = this._storage[index];
-        this._storage[index] = element;
-        return oldElement;
+        this._storage[index] = new Value(oldElement.type, element.val);
+        return new Value(oldElement.type, oldElement.val);
     }
 
     size() {

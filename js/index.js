@@ -7,7 +7,7 @@ var mode = "Java";
 var code = "";
 var editor;
 var typingTimer;                //timer identifier
-var doneTypingInterval = 1000; // wait time millis
+var doneTypingInterval = 1500; // wait time millis
 var arrTables;
 var slider = document.getElementById("myRange");
 
@@ -21,14 +21,17 @@ var Lexer, Parser, Visitor;
 $(document).ready(function () {
     setMode(mode);
     $("#myRange").on("input", function () {
-        // LINEA
+        for (let gutter of $(".gutter-highlight"))
+            gutter.className = "";
+        let gutter = $(".CodeMirror-code")[0].children[arrTables[slider.value][0]];
+        gutter.className += " gutter-highlight";
         Drawer.variables(arrTables[slider.value][1]);
     });
     // Code to put timer
     editor.on("keyup", function () {
         clearTimeout(typingTimer);
         typingTimer = setTimeout(function () {
-            for (var gutter of $(".gutter-error")) {
+            for (let gutter of $(".gutter-error")) {
                 gutter.className = "CodeMirror-linenumber CodeMirror-gutter-elt";
                 gutter.removeChild(gutter.lastChild);
             }
@@ -39,6 +42,10 @@ $(document).ready(function () {
                 slider.min = 0;
                 slider.value = 0;
                 slider.max = arrTables.length - 1;
+                for (let gutter of $(".gutter-highlight"))
+                    gutter.className = "";
+                let gutter = $(".CodeMirror-code")[0].children[arrTables[slider.value][0]];
+                gutter.className += " gutter-highlight";
                 Drawer.variables(arrTables[0][1]);
             }, 1);
         }, doneTypingInterval);
@@ -91,4 +98,36 @@ function visit(code) {
     } catch (e) {
         err(e);
     }
+}
+
+// From: https://jsfiddle.net/pahund/5qtt2Len/1/
+function clone(obj) {
+    let copy;
+
+    if (obj === null || typeof obj !== 'object') {
+        return obj;
+    }
+
+    if (obj instanceof Map) {
+        return new Map(clone(Array.from(obj)));
+    }
+
+    if (obj instanceof Array) {
+        copy = [];
+        for (let i = 0, len = obj.length; i < len; i++) {
+            copy[i] = clone(obj[i]);
+        }
+        return copy;
+    }
+
+    if (obj instanceof Object) {
+        copy = {};
+        for (const attr in obj) {
+            // if (obj.hasOwnProperty(attr)) {
+            copy[attr] = clone(obj[attr]);
+            // }
+        }
+        return copy;
+    }
+    throw new Error('Unable to copy object! Its type isn\'t supported');
 }

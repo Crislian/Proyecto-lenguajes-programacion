@@ -1,4 +1,6 @@
 const List = require("js/Structures/List");
+const Type = require('js/Type'),
+    Value = require('js/Value');
 
 class Queue extends List {
     constructor() {
@@ -6,7 +8,7 @@ class Queue extends List {
     }
 
     element() {
-        return super.get(0);
+        return super.get(new Value(null, 0));
     }
 
     offer(element) {
@@ -14,7 +16,7 @@ class Queue extends List {
     }
 
     peek() {
-        return super.get(0);
+        return super.get(new Value(null, 0));
     }
 
     poll() {

@@ -1,4 +1,6 @@
 const List = require("js/Structures/List");
+const Type = require('js/Type'),
+    Value = require('js/Value');
 
 class LinkedList extends List {
     constructor() {
@@ -18,11 +20,11 @@ class LinkedList extends List {
     }
 
     getFirst() {
-        return this.get(0);
+        return this.get(new Value(null, 0));
     }
 
     getLast() {
-        return this.get(this.size() - 1);
+        return this.get(new Value(null, this.size() - 1));
     }
 
     peek() {

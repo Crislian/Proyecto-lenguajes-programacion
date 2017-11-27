@@ -1,4 +1,5 @@
 const List = require("js/Structures/List");
+const Value = require("js/Value");
 
 class Stack extends List {
     constructor() {
@@ -6,7 +7,7 @@ class Stack extends List {
     }
 
     peek() {
-        return super.get(super.size()-1);
+        return super.get(new Value(null, super.size()-1));
     }
 
     pop() {
@@ -15,6 +16,10 @@ class Stack extends List {
 
     push(element) {
         this.add(element)
+    }
+
+    empty(){
+        return super.isEmpty();
     }
 }
 

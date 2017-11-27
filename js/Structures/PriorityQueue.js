@@ -1,3 +1,6 @@
+const Type = require('js/Type'),
+    Value = require('js/Value');
+
 class PriorityQueue {
     constructor() {
         this._storage = [];
@@ -42,7 +45,7 @@ class PriorityQueue {
         while (pos > 0) {
             let parent = (pos - 1) >> 1,
                 current = this._storage[parent];
-            if (this.compare(item, current) >= 0) break;
+            if (this.compare(item.val, current.val) >= 0) break;
             this._storage[pos] = current;
             pos = parent;
         }
@@ -52,15 +55,15 @@ class PriorityQueue {
 
     _down(pos) {
         let item = this._storage[pos];
-        while (pos < this.length >> 2) {
+        while (pos < (this.length >> 2)){
             let left = (pos << 2) + 1,
                 right = left + 1,
                 best = this._storage[left];
-            if (right < this.length && this.compare(this._storage[right], best) < 0) {
+            if (right < this.length && this.compare(this._storage[right].val, best.val) < 0) {
                 left = right;
                 best = this._storage[right];
             }
-            if (this.compare(best, item) >= 0)
+            if (this.compare(best.val, item.val) >= 0)
                 break;
             this._storage[pos] = best;
             pos = left;

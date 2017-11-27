@@ -4,8 +4,9 @@ const Type = require('js/Type');
 const Declarator = require('js/Declarator');
 const Value = require('js/Value');
 const CallFunc = require('js/CallFunc');
-const LinkedList = require('js/Structures/LinkedList');
 const List = require('js/Structures/List');
+const LinkedList = require('js/Structures/LinkedList');
+const ArrayList = require('js/Structures/ArrayList');
 const PriorityQueue = require('js/Structures/PriorityQueue');
 const Queue = require('js/Structures/Queue');
 const Stack = require('js/Structures/Stack');
@@ -83,6 +84,8 @@ class JVisitor extends JavaVisitor {
     // Visit a parse tree produced by JavaParser#block.
     visitBlock(ctx) {
         let index = 0;
+        hasToBreak = false;
+        hasToContinue = false;
         while (ctx.blockStatement(index)) {
             this.visitBlockStatement(ctx.blockStatement(index));
             index++;
@@ -370,39 +373,6 @@ class JVisitor extends JavaVisitor {
         }
     };
 
-    // Copied from:
-
-    clone(obj) {
-        let copy;
-
-        if (obj === null || typeof obj !== 'object') {
-            return obj;
-        }
-
-        if (obj instanceof Map) {
-            return new Map(this.clone(Array.from(obj)));
-        }
-
-        if (obj instanceof Array) {
-            copy = [];
-            for (let i = 0, len = obj.length; i < len; i++) {
-                copy[i] = this.clone(obj[i]);
-            }
-            return copy;
-        }
-
-        if (obj instanceof Object) {
-            copy = {};
-            for (const attr in obj) {
-                // if (obj.hasOwnProperty(attr)) {
-                copy[attr] = this.clone(obj[attr]);
-                // }
-            }
-            return copy;
-        }
-        throw new Error('Unable to copy object! Its type isn\'t supported');
-    }
-
     // ************************************************
     // ************************************************
     // ******************* OWN FUNCTIONS **************
@@ -410,7 +380,7 @@ class JVisitor extends JavaVisitor {
     // ************************************************
 
     copyTables() {
-        let newArr = this.clone(tables);
+        let newArr = clone(tables);
         return newArr;
     }
 
@@ -506,7 +476,7 @@ class JVisitor extends JavaVisitor {
 
             for (let i = 0; i < valueExp.val.size(); i++) {
                 hasToContinue = false;
-                let aux = valueExp.val.get(i);
+                let aux = valueExp.val.get(new Value(null, i));
                 newVariable.value.val = aux;
                 line = ctx.start.line;
                 arrayOfTables.push([line, this.copyTables()]);
@@ -588,7 +558,7 @@ class JVisitor extends JavaVisitor {
                 case "PriorityQueue":
                     return (new PriorityQueue());
                 case "ArrayList":
-                    return (new LinkedList());
+                    return (new ArrayList());
             }
         }
     }
@@ -693,7 +663,7 @@ class JVisitor extends JavaVisitor {
             case "&&":
                 return new Value(boolType, valL && valR);
             case "=":
-                if (valueLeft.type.mainType !== valueRight.type.mainType)
+                if (valueLeft.type.mainType != valueRight.type.mainType)
                     valueLeft.val = this.instantiateObject(valueLeft.type, null);
                 else valueLeft.val = valueRight.val;
                 arrayOfTables.push([line, this.copyTables()]);

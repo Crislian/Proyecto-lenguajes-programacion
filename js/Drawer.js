@@ -57,10 +57,10 @@ class Drawer {
             text(type + " " + varVal.value.type.mainType + " " + varName + ":", 15, 0);
             textAlign(CENTER, CENTER);
             textAlign(RIGHT, TOP);
-            if (varVal.value.val == null || isNaN(varVal.value.val))
+            if (varVal.value.val == null)
                 varVal.value.val = "null";
             text(varVal.value.val, width / 3 - 15, 0);
-            if (varVal.value.val === "null")
+            if (varVal.value.val == "null")
                 varVal.value.val = null;
             pop();
             i++;
@@ -78,7 +78,6 @@ class Drawer {
             translate(0, h - 10);
             text(varName + " - " + structName + "<" + struct.value.type.subType + ">", 0, 0);
             translate(0, 35);
-            console.log(struct.value.val._storage)
             if (struct.value.val._storage != null && !struct.value.val._storage.length == 0)
                 h = eval("Drawer.draw" + structName)(struct.value.val._storage.map(function (obj) {
                     return obj.val.toString();
@@ -104,7 +103,6 @@ class Drawer {
     }
 
     static drawLinkedList(list) {
-        console.log("LinkedList")
         let w = 5, i = 1;
         for (let el of list) {
             push();
