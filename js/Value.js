@@ -1,5 +1,5 @@
-class Value{
-    constructor(type, val){
+class Value {
+    constructor(type, val) {
         this.type = type; // Type
         this.val = val; // Depends on the DataType
     }

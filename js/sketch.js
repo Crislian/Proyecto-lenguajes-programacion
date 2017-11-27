@@ -1,7 +1,7 @@
 require("lib/p5.min.js");
 const Drawer = require("js/Drawer");
 
-var openSans, canvas;
+let openSans, canvas;
 //var zoom, zoomAt, resize;
 
 function preload() {
@@ -20,7 +20,6 @@ function setup() {
 }
 
 function draw() {
-    // background(26, 7, 84);
     // translate(zoomAt.x, zoomAt.y);
     // scale(zoom);
     // translate(-zoomAt.x, -zoomAt.y);

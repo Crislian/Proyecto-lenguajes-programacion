@@ -6,7 +6,7 @@ class LinkedList extends List {
     }
 
     addFirst(element) {
-        this._storage.unshift(element);
+        this.add(element, 0);
     }
 
     addLast(element) {
@@ -66,6 +66,8 @@ class LinkedList extends List {
     }
 
     remove(index = 0) {
+        if (isNaN(index))
+            return super.removeElement(index);
         return super.remove(index);
     }
 

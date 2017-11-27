@@ -6,15 +6,15 @@ class Queue extends List {
     }
 
     element() {
-        return this.get(0);
+        return super.get(0);
     }
 
     offer(element) {
-        return this.add(element);
+        return super.add(element);
     }
 
     peek() {
-        return this.get(0);
+        return super.get(0);
     }
 
     poll() {

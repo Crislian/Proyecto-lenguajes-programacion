@@ -11,6 +11,7 @@ const PriorityQueue = require('js/Structures/PriorityQueue');
 const Queue = require('js/Structures/Queue');
 const Stack = require('js/Structures/Stack');
 
+
 let tables = new Array();
 let structures = new Set();
 structures.add("LinkedList");
@@ -108,7 +109,7 @@ class JVisitor extends JavaVisitor {
         }
         let type = this.visitTypeType(ctx.typeType());
 
-            console.log(type)
+        console.log(type)
         let declarators = this.visitVariableDeclarators(ctx.variableDeclarators());
         for (let dec of declarators) {
             console.log(dec)
@@ -222,13 +223,10 @@ class JVisitor extends JavaVisitor {
             return this.binOpEvaluation(valueLeft, valueRight, ctx.bop.text);
         } else { // expression of call structure functions
             let call = this.visitExpression(ctx.expression(0));
-            if (ctx.expressionList()) {
+            if (ctx.expressionList())
                 call.paramList = this.visitExpressionList(ctx.expressionList());
-            }
-            console.log(call.nameVar.val[call.nameFunc])
-            let c = call.nameVar.val[call.nameFunc].apply(call.nameVar.val, call.paramList);
-            console.log("VALUE: " + c);
-            return c;
+            console.log(call);
+            return call.nameVar.val[call.nameFunc].apply(call.nameVar.val, call.paramList);
         }
     };
 
