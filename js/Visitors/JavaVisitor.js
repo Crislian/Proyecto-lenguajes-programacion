@@ -122,6 +122,8 @@ class JVisitor extends JavaVisitor {
             this.insertVariable(new Variable(isFinal, dec.name, dec.value));
             let line = ctx.start.line;
             arrayOfTables.push([line, this.copyTables()]);
+            console.log(arrayOfTables);
+            this.printVariables()
         }
         return;
     };
@@ -222,8 +224,8 @@ class JVisitor extends JavaVisitor {
             let call = this.visitExpression(ctx.expression(0));
             if (ctx.expressionList())
                 call.paramList = this.visitExpressionList(ctx.expressionList());
-        let line = ctx.start.line;
-        arrayOfTables.push([line, this.copyTables()]);
+            let line = ctx.start.line;
+            arrayOfTables.push([line, this.copyTables()]);
             return call.nameVar.val[call.nameFunc].apply(call.nameVar.val, call.paramList);
         }
     };
