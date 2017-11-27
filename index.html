@@ -16,11 +16,10 @@
     <div id="input" class="input ">
         <p>Write your code here:</p>
     </div>
-    <div id="" class="" style = "width:100%">
-        <div id="slidecontainer" style = "width:100%">
+    <div style="width:100%">
+        <div id="slidecontainer" style="width:100%">
             <input type="range" min="0" max="0" value="0" class="slider" id="myRange">
         </div>
-        <p id="demo"></p>
     </div>
     <div id="canvas" class=""></div>
 </div>
@@ -32,7 +31,7 @@
     output.innerHTML = slider.value; // Display the default slider value
 
     // Update the current slider value (each time you drag the slider handle)
-    slider.oninput = function() {
+    slider.oninput = function () {
         output.innerHTML = this.value;
     }
 </script>

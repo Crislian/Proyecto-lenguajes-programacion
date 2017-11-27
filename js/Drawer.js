@@ -32,6 +32,7 @@ class Drawer {
             structs = new Map();
         for (let table of tables) {
             for (let [name, variable] of table) {
+                console.log(variable)
                 if (variable.value.type.isPrimitive)
                     vars.set(name, variable);
                 else
@@ -46,6 +47,7 @@ class Drawer {
     static drawVariables(vars) {
         let i = 0;
         for (let [varName, varVal] of vars) {
+            console.log(varName + "\t" + varVal)
             push();
             translate(2 * width / 3, i * 20 + 35);
             fill(26, 7, 84);
