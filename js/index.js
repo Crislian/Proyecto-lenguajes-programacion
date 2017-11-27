@@ -60,10 +60,10 @@ function setMode(m) {
         lineNumbers: true,
         matchBrackets: true,
         styleActiveLine: true,
-        indentUnit:4,
+        indentUnit: 4,
         mode: "text/x-" + mode.toLowerCase(),
         value: "public class Main{\n\tpublic static void main(String[] args){\n\t\t\n\t}\t\n}",
-        smartIdent:true
+        smartIdent: true
     });
     Lexer = require(("generated-parser/" + m + "Lexer"));
     Parser = require(("generated-parser/" + m + "Parser"));

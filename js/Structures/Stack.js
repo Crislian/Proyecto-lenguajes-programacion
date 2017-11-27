@@ -6,11 +6,11 @@ class Stack extends List {
     }
 
     peek() {
-        return this.get(this.size()-1);
+        return super.get(super.size()-1);
     }
 
     pop() {
-        return this.remove(this.size() -1);
+        return super.remove(super.size() -1);
     }
 
     push(element) {

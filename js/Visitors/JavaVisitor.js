@@ -11,6 +11,7 @@ const PriorityQueue = require('js/Structures/PriorityQueue');
 const Queue = require('js/Structures/Queue');
 const Stack = require('js/Structures/Stack');
 
+
 let tables = new Array();
 let arrayOfTables = new Array();
 
@@ -105,16 +106,13 @@ class JVisitor extends JavaVisitor {
 
     // Visit a parse tree produced by JavaParser#localVariableDeclaration.
     visitLocalVariableDeclaration(ctx) {
-        console.log("Variable declaration " + ctx.getText());
         let isFinal = false;
         if (ctx.variableModifier(0)) {
             isFinal = true;
         }
         let type = this.visitTypeType(ctx.typeType());
-        console.log(type)
         let declarators = this.visitVariableDeclarators(ctx.variableDeclarators());
         for (let dec of declarators) {
-            console.log(dec)
             if (dec.value) {
                 dec.value.type = type;
                 if (this.isStructure(type.mainType)) dec.value.val = this.instantiateObject(type, null)
@@ -222,16 +220,11 @@ class JVisitor extends JavaVisitor {
             return this.binOpEvaluation(valueLeft, valueRight, ctx);
         } else { // expression of call structure functions
             let call = this.visitExpression(ctx.expression(0));
-            if (ctx.expressionList()) {
+            if (ctx.expressionList())
                 call.paramList = this.visitExpressionList(ctx.expressionList());
-            }
-
-            console.log(call.nameVar.val[call.nameFunc])
-            let c = call.nameVar.val[call.nameFunc].apply(call.nameVar.val, call.paramList);
-            console.log("VALUE: " + c);
-            let line = ctx.start.line;
-            arrayOfTables.push([line, this.copyTables()]);
-            return c;
+        let line = ctx.start.line;
+        arrayOfTables.push([line, this.copyTables()]);
+            return call.nameVar.val[call.nameFunc].apply(call.nameVar.val, call.paramList);
         }
     };
 
@@ -321,35 +314,35 @@ class JVisitor extends JavaVisitor {
 
     // Visit a parse tree produced by JavaParser#statement.
     visitStatement(ctx) {
-        if(hasToBreak || hasToContinue) return
+        if (hasToBreak || hasToContinue) return
 
-        if(ctx.IF()){
+        if (ctx.IF()) {
             this.ifStatement(ctx);
-        } else if(ctx.FOR()){
+        } else if (ctx.FOR()) {
             this.addTable();
             hasToBreak = false;
             this.forStatement(ctx);
             hasToBreak = false;
             this.removeTable();
-        } else if(ctx.WHILE()){
+        } else if (ctx.WHILE()) {
             hasToBreak = false;
             this.whileStatement(ctx);
             hasToBreak = false;
-        } else if(ctx.SWITCH()){
+        } else if (ctx.SWITCH()) {
             hasToBreak = false;
             this.switchStatement(ctx);
             hasToBreak = false;
-        } else if(ctx.DO()){
+        } else if (ctx.DO()) {
             this.doWhileStatement(ctx);
-        } else if(ctx.BREAK()){
+        } else if (ctx.BREAK()) {
             this.breakStatement(ctx);
-        } else if(ctx.CONTINUE()) {
+        } else if (ctx.CONTINUE()) {
             this.continueStatement(ctx);
-        } else if(ctx.statementExpression){
+        } else if (ctx.statementExpression) {
             return this.visitExpression(ctx.statementExpression);
-        } else if(ctx.SEMI()){
-            return ;
-        } else if(ctx.block()){
+        } else if (ctx.SEMI()) {
+            return;
+        } else if (ctx.block()) {
             this.addTable();
             this.visitBlock(ctx.block())
             this.removeTable();
@@ -372,8 +365,8 @@ class JVisitor extends JavaVisitor {
 
     // Visit a parse tree produced by JavaParser#switchLabel.
     visitSwitchLabel(ctx) {
-        if(ctx.CASE()){
-            if(ctx.expression()){
+        if (ctx.CASE()) {
+            if (ctx.expression()) {
                 return this.visitExpression(ctx.expression());
             } else {
                 return this.findVariable(ctx.IDENTIFIER().getText());
@@ -388,7 +381,6 @@ class JVisitor extends JavaVisitor {
     // ******************* OWN FUNCTIONS **************
     // ************************************************
     // ************************************************
-
 
     copyTables(){
         let newArr = new Array();
@@ -407,24 +399,23 @@ class JVisitor extends JavaVisitor {
         let index = 0;
         let flag = false;
         let ctxAux;
-        console.log(valueExpression);
-        while(ctx.switchBlockStatementGroup(index) && !hasToBreak){
+        while (ctx.switchBlockStatementGroup(index) && !hasToBreak) {
             ctxAux = ctx.switchBlockStatementGroup(index);
             let i = 0;
-            while(ctxAux.switchLabel(i)){
+            while (ctxAux.switchLabel(i)) {
                 let val = this.visitSwitchLabel(ctxAux.switchLabel(i));
-                if(val == "default"){
+                if (val == "default") {
                     flag = true;
                     break;
-                } else if(val.val == valueExpression.val){
+                } else if (val.val == valueExpression.val) {
                     flag = true;
                     break;
                 }
                 i++;
             }
-            if(flag){
+            if (flag) {
                 i = 0;
-                while(ctxAux.blockStatement(i)){
+                while (ctxAux.blockStatement(i)) {
                     this.visitBlockStatement(ctxAux.blockStatement(i));
                     i++;
                 }
@@ -433,36 +424,36 @@ class JVisitor extends JavaVisitor {
         }
     }
 
-    breakStatement(ctx){
-        hasToBreak  = true;
+    breakStatement(ctx) {
+        hasToBreak = true;
     }
 
-    continueStatement(ctx){
+    continueStatement(ctx) {
         hasToContinue = true;
     }
 
-    whileStatement(ctx){
+    whileStatement(ctx) {
         let stopCond = this.visitParExpression(ctx.parExpression()).val;
-        while (true){
+        while (true) {
             hasToContinue = false;
-            if(stopCond == false) {
+            if (stopCond == false) {
                 break;
             }
             this.visitStatement(ctx.statement(0));
-            if(hasToBreak) break;
+            if (hasToBreak) break;
             stopCond = this.visitParExpression(ctx.parExpression()).val;
         }
     }
 
-    doWhileStatement(ctx){
+    doWhileStatement(ctx) {
         let stopCond = true;
-        do{
+        do {
             this.visitStatement(ctx.statement(0));
             stopCond = this.visitParExpression(ctx.parExpression());
-        } while(stopCond);
+        } while (stopCond);
     }
 
-    ifStatement(ctx){
+    ifStatement(ctx) {
         let valIf = this.visitParExpression(ctx.parExpression());
         if (valIf.val === true) {
             this.visitStatement(ctx.statement(0));
@@ -492,7 +483,7 @@ class JVisitor extends JavaVisitor {
             let line = ctx.start.line;
             arrayOfTables.push([line, this.copyTables()]);
 
-            for(let i = 0; i < valueExp.val.size(); i++){
+            for (let i = 0; i < valueExp.val.size(); i++) {
                 hasToContinue = false;
                 let aux = valueExp.val.get(i);
                 newVariable.value.val = aux;
@@ -500,29 +491,28 @@ class JVisitor extends JavaVisitor {
                 arrayOfTables.push([line, this.copyTables()]);
 
                 this.visitStatement(ctx.statement(0));
-                if(hasToBreak) break;
+                if (hasToBreak) break;
             }
         } else {
             if (ctx.forControl().forInit())
                 this.visitForInit(ctx.forControl().forInit());
             let stopValue = true;
-            while(true){
+            while (true) {
                 hasToContinue = false;
-                if(ctx.forControl().expression())
+                if (ctx.forControl().expression())
                     stopValue = this.visitExpression(ctx.forControl().expression()).val
-                if(stopValue == false){
+                if (stopValue == false) {
                     break;
                 }
 
                 this.visitStatement(ctx.statement(0));
-                if(hasToBreak) break;
+                if (hasToBreak) break;
 
-                if(ctx.forControl().expressionList())
+                if (ctx.forControl().expressionList())
                     this.visitExpressionList(ctx.forControl().expressionList());
             }
         }
     }
-
 
     addTable() {
         tables.push(new Map());
@@ -679,7 +669,7 @@ class JVisitor extends JavaVisitor {
             case "&&":
                 return new Value(boolType, valL && valR);
             case "=":
-                if(valueLeft.type.mainType !== valueRight.type.mainType)
+                if (valueLeft.type.mainType !== valueRight.type.mainType)
                     valueLeft.val = this.instantiateObject(valueLeft.type, null);
                 else valueLeft.val = valueRight.val;
                 arrayOfTables.push([line, this.copyTables()]);
